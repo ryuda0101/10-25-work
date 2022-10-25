@@ -1,0 +1,67 @@
+<% if(!userData){ %>
+    <script>
+        alert("비회원은 접근할수 없는 페이지 입니다.")
+        location.href = "/login";
+    </script>
+<% } %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 목록 페이지</title>
+    <!-- 아이콘 관련 링크 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+    <%- include("common/contact_banner.ejs") %>
+
+    <div id="brd_insert">
+        <div class="center">
+            <h2>CONTACT US</h2>
+            <p>GET IN TOUCH</p>
+            <div class="boxs">
+                <div class="box">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>Reservation</p>
+                    <p>+82 287 - 465 - 0659</p>
+                </div>
+                <div class="box">
+                    <i class="fa-regular fa-envelope"></i>
+                    <p>Email Info</p>
+                    <p>info@grandhotel.com</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Address</p>
+                    <p>360 Harvest St, North Subract, London. United<br>States Of Amrica</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <p>Web</p>
+                    <p>info@luxuryhotel.com</p>
+                </div>
+            </div>
+            <form action="/add" method="post">
+                <div class="line">
+                    <input type="text" name="name" placeholder="Name" value="<%- userData.joinnick %>" disabled>
+                    <input type="text" name="email" placeholder="Email">
+                </div>
+                <div class="line">
+                    <input type="text" name="title" placeholder="Title">
+                    <input type="text" name="number" placeholder="Number">
+                </div>
+                <textarea name="message" placeholder="Write message"></textarea>
+                <button type="submit">SEND MESSAGE</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include("common/footer.ejs") %> 
+</body>
+</html>

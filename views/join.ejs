@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="login_page">
+        <div class="center">
+            <div class="left_box">
+                <h2>Create an account</h2>
+                <div class="btns" id="Register_btns">
+                    <a class="loginBtn" id="loginBtn" href="/login">LOGIN</a>
+                    <span></span>
+                    <a id="registerBtn" href="/register">REGISTER</a>
+                </div>
+                <form class="loginForm" action="/userJoin" method="post">
+                    <input type="text" name="username" class="username" placeholder="Full Name">
+                    <input type="text" name="userid" class="userid" placeholder="Email Address">
+                    <input type="password" name="userpass" class="userpass" placeholder="Password">
+                    <button type="submit">REGISTER</button>
+                </form>
+                <a href="#">Already a member? Login here</a>
+            </div>
+            <div class="right_box">
+                <img src="/img/login_img3.png">
+                <div class="text_box">
+                    <h3>Join with us</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

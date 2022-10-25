@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="login_page">
+        <div class="center">
+            <div class="left_box">
+                <h2>Sign into Your account</h2>
+                <div class="btns">
+                    <a class="loginBtn" href="/login">LOGIN</a>
+                    <span></span>
+                    <a class="registerBtn" href="/register">REGISTER</a>
+                </div>
+                <form class="loginForm" action="/userLogin" method="post">
+                    <input type="text" name="userid" class="userid" placeholder="Email Address">
+                    <input type="password" name="userpass" class="userpass" placeholder="Password">
+                    <button type="submit">LOGIN</button>
+                </form>
+                <a href="/register">Don't have an account? Register here</a>
+            </div>
+            <div class="right_box">
+                <img src="/img/login_img3.png">
+                <div class="text_box">
+                    <h3>Join with us</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

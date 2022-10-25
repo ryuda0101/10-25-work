@@ -1,0 +1,522 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img, video {
+  vertical-align: middle;
+}
+
+input, select, textarea {
+  outline: 0;
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+body {
+  line-height: 1;
+}
+
+button {
+  border: none;
+}
+
+input {
+  outline: 0;
+}
+
+.logo img {
+  width: 120px;
+}
+
+body {
+  font-family: "Gilda Display", serif;
+}
+
+#header #top_box {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+}
+#header #top_box .center {
+  width: 1100px;
+  display: flex;
+  justify-content: end;
+  padding: 15px 0;
+}
+#header #top_box .center p, #header #top_box .center a {
+  color: #fff;
+}
+#header #top_box .center > div {
+  margin: 0 8px;
+}
+#header #top_box .center span {
+  width: 1px;
+  height: 15px;
+  background-color: #fff;
+  margin: 0 10px;
+}
+#header #bot_box {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+}
+#header #bot_box .center {
+  width: 1100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#header #bot_box .logo {
+  margin-right: 50px;
+}
+#header #bot_box .gnb {
+  display: flex;
+}
+#header #bot_box .gnb li {
+  margin: 0 15px;
+}
+#header #bot_box .gnb li a {
+  color: #555;
+}
+
+#banner {
+  background-image: url(/img/3_1.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#banner .center {
+  width: 1100px;
+  color: #fff;
+  text-align: center;
+}
+#banner .center h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+#footer .footer_info {
+  display: flex;
+  justify-content: center;
+  padding: 85px 0;
+  background-color: blue;
+  color: #fff;
+}
+#footer .footer_info .center {
+  width: 1100px;
+  display: flex;
+  justify-content: space-between;
+}
+#footer .footer_info .center > div h3 {
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+#footer .footer_info .center > div .line {
+  line-height: 20px;
+  margin-bottom: 25px;
+}
+#footer .footer_info .center > ul h3 {
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+#footer .footer_info .center > ul li {
+  line-height: 20px;
+}
+#footer .footer_info .center > ul li a {
+  color: #fff;
+}
+#footer .footer_info .center .sns {
+  display: flex;
+  justify-content: space-between;
+}
+#footer .footer_info .center .sns > li a {
+  width: 45px;
+  height: 45px;
+  background-color: red;
+  display: block;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 2px;
+}
+#footer .copyright {
+  background-color: red;
+  padding: 45px 0;
+}
+#footer .copyright .center {
+  text-align: center;
+  color: #fff;
+}
+
+#login_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#login_page .center {
+  width: 950px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
+}
+#login_page .center .left_box {
+  margin: auto 50px;
+  text-align: center;
+}
+#login_page .center .left_box h2 {
+  font-weight: normal;
+  font-size: 25px;
+}
+#login_page .center .left_box .btns {
+  margin: 25px auto 30px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px #888;
+  width: 180px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#login_page .center .left_box .btns span {
+  display: inline-block;
+  width: 2px;
+  height: 30px;
+  background-color: #e6e6e6;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#login_page .center .left_box .btns a {
+  width: 89px;
+  color: #555;
+}
+#login_page .center .left_box .btns .loginBtn {
+  color: blue;
+}
+#login_page .center .left_box .loginForm {
+  margin-bottom: 35px;
+}
+#login_page .center .left_box .loginForm input {
+  width: 355px;
+  height: 40px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px #888;
+  padding: 5px 10px;
+  margin-bottom: 25px;
+}
+#login_page .center .left_box .loginForm button {
+  width: 145px;
+  height: 40px;
+  border-radius: 30px;
+  color: #fff;
+  background-color: blue;
+  display: block;
+  text-align: center;
+}
+#login_page .center .left_box a {
+  color: #555;
+  font-size: 13px;
+}
+#login_page .center .right_box {
+  position: relative;
+}
+#login_page .center .right_box .text_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  padding: 10%;
+}
+#login_page .center .right_box .text_box h3 {
+  color: #fff;
+}
+
+#Register_btns #loginBtn {
+  color: #555;
+}
+#Register_btns #registerBtn {
+  color: blue;
+}
+
+#brd_list {
+  display: flex;
+  justify-content: center;
+}
+#brd_list .center {
+  width: 1100px;
+  background-color: #fff;
+}
+#brd_list .center .top_text {
+  margin: 130px 0 70px;
+}
+#brd_list .center .top_text h2, #brd_list .center .top_text p {
+  text-align: center;
+  font-size: 40px;
+  margin: auto 0;
+}
+#brd_list .center .top_text p {
+  font-size: 15px;
+  margin-top: 10px;
+}
+#brd_list .center table {
+  margin-bottom: 120px;
+  width: 100%;
+}
+#brd_list .center table tr {
+  line-height: 70px;
+}
+#brd_list .center table tr th {
+  font-weight: normal;
+}
+#brd_list .center table .brd_top {
+  border-top: 2px solid #000;
+  border-bottom: 1px solid #000;
+}
+#brd_list .center table .brd_bot {
+  border-bottom: 1px solid #e2e2e2;
+}
+#brd_list .center .search_menu {
+  margin-bottom: 120px;
+}
+#brd_list .center .search_menu select {
+  border: 1px solid #e2e2e2;
+  width: 85px;
+  height: 40px;
+  border-radius: 3px;
+}
+#brd_list .center .search_menu #searchInput {
+  border: 1px solid #e2e2e2;
+  width: 237px;
+  height: 40px;
+  border-radius: 3px;
+}
+#brd_list .center .search_menu button {
+  width: 48px;
+  height: 40px;
+  border-radius: 3px;
+}
+
+#brd_detail {
+  display: flex;
+  justify-content: center;
+}
+#brd_detail .center .top_text {
+  margin: 130px 0 70px;
+}
+#brd_detail .center .top_text h2, #brd_detail .center .top_text p {
+  text-align: center;
+  font-size: 40px;
+  margin: auto 0;
+}
+#brd_detail .center .top_text p {
+  font-size: 15px;
+  margin-top: 10px;
+}
+#brd_detail .center .brd_detail {
+  margin: 0 0 30px 0;
+  width: 1100px;
+}
+#brd_detail .center .brd_detail tr {
+  line-height: 70px;
+}
+#brd_detail .center .brd_detail tr th {
+  text-align: left;
+  border-bottom: 1px solid #e2e2e2;
+  white-space: pre;
+  font-weight: normal;
+}
+#brd_detail .center .brd_detail tr .left_th {
+  width: 15%;
+  text-align: center;
+}
+#brd_detail .center .brd_detail tr .right_th {
+  width: 85%;
+}
+#brd_detail .center .brd_detail .brd_context {
+  border-bottom: 1px solid #e2e2e2;
+  height: 500px;
+  position: relative;
+}
+#brd_detail .center .brd_detail .brd_context .context {
+  border-bottom: none;
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  line-height: 1;
+  white-space: pre-line;
+}
+#brd_detail .center .brd_detail .top_line {
+  border-top: 1px solid #000;
+}
+#brd_detail .center .comment {
+  border-bottom: 1px solid #e2e2e2;
+  padding: 50px 0;
+}
+#brd_detail .center .comment #comment_form textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #000;
+}
+#brd_detail .center .comment #comment_form button {
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  background-color: #adb5bd;
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 10px;
+}
+#brd_detail .center .comment_box {
+  padding: 50px 0;
+}
+#brd_detail .center .comment_box .comment_context {
+  white-space: pre;
+}
+#brd_detail .center .comment_box .comment_date, #brd_detail .center .comment_box .comment_auther {
+  text-align: right;
+}
+#brd_detail .center .comment_box .comment_btn {
+  display: flex;
+}
+#brd_detail .center .comment_box .comment_btn a {
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  background-color: #adb5bd;
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 5px;
+}
+#brd_detail .center .comment_box .comupdate_form {
+  display: none;
+  margin-top: 50px;
+}
+#brd_detail .center .comment_box .comupdate_form textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #000;
+}
+#brd_detail .center .comment_box .comupdate_form button {
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  background-color: #adb5bd;
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+#brd_detail .center .detail_btns {
+  margin-bottom: 240px;
+}
+#brd_detail .center .detail_btns a {
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  background-color: #adb5bd;
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 5px;
+}
+
+#brd_insert {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+#brd_insert .center {
+  width: 1100px;
+}
+#brd_insert .center h2 {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+#brd_insert .center p {
+  text-align: center;
+  margin-bottom: 45px;
+}
+#brd_insert .center .boxs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 55px;
+}
+#brd_insert .center .boxs .box {
+  text-align: center;
+}
+#brd_insert .center .boxs .box i {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+#brd_insert .center .boxs .box p {
+  line-height: 25px;
+}
+#brd_insert .center form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#brd_insert .center form .line {
+  width: 730px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+#brd_insert .center form .line input {
+  width: 350px;
+  height: 45px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+#brd_insert .center form textarea {
+  width: 730px;
+  height: 240px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+#brd_insert .center form button {
+  width: 168px;
+  height: 44px;
+  background-color: blue;
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 60px;
+}
