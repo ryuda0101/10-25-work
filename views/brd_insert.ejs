@@ -47,7 +47,7 @@
                     <p>info@luxuryhotel.com</p>
                 </div>
             </div>
-            <form action="/add" method="post">
+            <form action="/add" method="post" enctype="multipart/form-data">
                 <div class="line">
                     <input type="text" name="name" placeholder="Name" value="<%- userData.joinnick %>" disabled>
                     <input type="text" name="email" placeholder="Email">
@@ -55,6 +55,9 @@
                 <div class="line">
                     <input type="text" name="title" placeholder="Title">
                     <input type="text" name="number" placeholder="Number">
+                </div>
+                <div class="line">
+                    <input type="file" name="file" class="file">
                 </div>
                 <textarea name="message" placeholder="Write message"></textarea>
                 <button type="submit">SEND MESSAGE</button>

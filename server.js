@@ -84,8 +84,19 @@ app.get("/insert",function(req,res){
     });
 })
 
+// 첨부파일 기능
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/files')
+      },
+      filename: function (req, file, cb) {
+        cb(null, file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8'))
+      }
+})
+const upload = multer({ storage: storage })
+
 // 게시글 작성시 post로 db에 데이터 올리기
-app.post("/add",function(req,res){
+app.post("/add",upload.single('file'),function(req,res){
     db.collection("count").findOne({name:"게시글"},function(err,result){
         db.collection("board").insertOne({
             brd_id:result.totalBoard + 1,
@@ -94,7 +105,8 @@ app.post("/add",function(req,res){
             brd_title:req.body.title,
             brd_number:req.body.number,
             brd_context:req.body.message,
-            brd_date:moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:ss")
+            brd_date:moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:ss"),
+            fileName:req.file.originalname
         },function(err,result){
             db.collection("count").updateOne({name:"게시글"},{$inc:{totalBoard:1}},function(err,result){
                 res.redirect("/brdlist")
@@ -109,13 +121,86 @@ app.get("/edit/:no",function(req,res){
         res.render("brd_edit",{userData:req.user, brdinfo:result});
     });
 })
+// 게시글 수정 후 db에 데이터 새로 업데이트
+app.post("/update",upload.single('file'),function(req,res){
+    db.collection("board").updateOne({brd_id:Number(req.body.hidden)},{$set:{
+        brd_name:req.user.joinnick,
+        brd_email:req.body.email,
+        brd_title:req.body.title,
+        brd_number:req.body.number,
+        brd_context:req.body.message,
+        fileName:req.file.originalname
+    }},function(err,result){
+        res.redirect("/detail/" + Number(req.body.hidden));
+    });
+});
 
 // 게시글 상세 페이지
 app.get("/detail/:no",function(req,res){
-    db.collection("board").findOne({brd_id:Number(req.params.no)},function(err,result){
-        res.render("brd_detail",{userData:req.user, brdinfo:result});
+    db.collection("board").findOne({brd_id:Number(req.params.no)},function(err,result1){
+        db.collection("comment").find({comPrd:result1.brd_id}).toArray(function(err,result2){
+            res.render("brd_detail",{userData:req.user, brdinfo:result1, commentData:result2});
+        });
     });
 });
+
+// 게시글 삭제 페이지
+app.get ("/delete/:no",function(req,res){
+    db.collection("board").deleteOne({brd_id:Number(req.params.no)},function(err,result){
+        res.redirect("/brdlist");
+    });
+});
+
+// 검색기능
+app.get("/search",function(req,res){
+    let search = [
+                    {
+                        '$search': {
+                            'index': 'board_search',
+                            'text': {
+                                query: req.query.searchInput,
+                                path: req.query.search_menu
+                            }
+                        }
+                    },{
+                        $sort:{brdid:-1}
+                    }
+                ]
+    db.collection("board").aggregate(search).toArray(function(err,result){
+        res.render("brd_list",{userData:req.user, brdinfo:result});
+    });
+});
+
+// 댓글 작성 후 db에 추가하는 post 요청
+app.post("/addcomment",function(req,res){
+    // 몇번 댓글인지 번호 부여하기 위한 작업
+    db.collection("count").findOne({name:"댓글"},function(err,result1){
+        // 해당 게시글의 번호값도 함께 부여해줘야 한다.
+        db.collection("board").findOne({brd_id:Number(req.body.prdid)},function(err,result2){
+            // comment 에 댓글을 집어넣기
+            db.collection("comment").insertOne({
+                comNo:result1.commentCount + 1,
+                comPrd:result2.brd_id,
+                comContext:req.body.comment_text,
+                comAuther:req.user.joinnick,
+                comDate:moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:ss")
+            },function(err,result){
+                db.collection("count").updateOne({name:"댓글"},{$inc:{commentCount:1}},function(err,result){
+                    // 상세페이지에서 댓글 입력시 보내준 게시글 번호로 → 상세페이지 이동하도록 요청
+                    res.redirect("/detail/" + req.body.prdid);
+                })
+            });
+        });
+    });
+});
+
+// 서브페이지01
+app.get("/about_us",function(req,res){
+    res.render("sub_page1",{userData:req.user});
+});
+
+
+
 
 
 
@@ -154,9 +239,14 @@ app.get("/login",function(req,res){
 
 // 로그인시 입력한 아이디, 비밀번호 검증 처리
 app.post("/userLogin",passport.authenticate('local', {failureRedirect : '/fail'}),function(req,res){
-    //                                                   ↑ 실패시 위의 경로로 요청
-    // ↓ 로그인 성공시 메인페이지로 이동
-    res.redirect("/")
+    db.collection("userInfo").findOne({joinpass:req.body.userpass},function(err,result){
+        if(!result){
+            res.send("<script> alert('비밀번호를 다시한번 확인해 주세요.'); location.href = '/login' </script>")
+        }
+        else {
+            res.redirect("/")
+        }
+    });
 });
 
 // /userLogin 경로 요청시 passport.autenticate() 함수 구간이 아이디, 비밀번호 로그인 검증 구간

@@ -269,10 +269,11 @@ body {
 }
 #brd_list .center {
   width: 1100px;
+  margin: 130px 0;
   background-color: #fff;
 }
 #brd_list .center .top_text {
-  margin: 130px 0 70px;
+  margin-bottom: 70px;
 }
 #brd_list .center .top_text h2, #brd_list .center .top_text p {
   text-align: center;
@@ -284,8 +285,8 @@ body {
   margin-top: 10px;
 }
 #brd_list .center table {
-  margin-bottom: 120px;
   width: 100%;
+  margin-bottom: 30px;
 }
 #brd_list .center table tr {
   line-height: 70px;
@@ -300,8 +301,20 @@ body {
 #brd_list .center table .brd_bot {
   border-bottom: 1px solid #e2e2e2;
 }
-#brd_list .center .search_menu {
+#brd_list .center table .title {
+  text-align: left;
+}
+#brd_list .center .write {
   margin-bottom: 120px;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  background-color: #adb5bd;
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 5px;
 }
 #brd_list .center .search_menu select {
   border: 1px solid #e2e2e2;
@@ -325,6 +338,9 @@ body {
   display: flex;
   justify-content: center;
 }
+#brd_detail .center {
+  margin: 130px 0;
+}
 #brd_detail .center .top_text {
   margin: 130px 0 70px;
 }
@@ -338,15 +354,15 @@ body {
   margin-top: 10px;
 }
 #brd_detail .center .brd_detail {
-  margin: 0 0 30px 0;
+  margin-bottom: 30px;
   width: 1100px;
 }
 #brd_detail .center .brd_detail tr {
   line-height: 70px;
+  border-bottom: 1px solid #e2e2e2;
 }
 #brd_detail .center .brd_detail tr th {
   text-align: left;
-  border-bottom: 1px solid #e2e2e2;
   white-space: pre;
   font-weight: normal;
 }
@@ -374,13 +390,13 @@ body {
   border-top: 1px solid #000;
 }
 #brd_detail .center .comment {
-  border-bottom: 1px solid #e2e2e2;
-  padding: 50px 0;
+  margin-bottom: 30px;
 }
 #brd_detail .center .comment #comment_form textarea {
   width: 100%;
   height: 100px;
   border: 1px solid #000;
+  margin-bottom: 10px;
 }
 #brd_detail .center .comment #comment_form button {
   display: inline-block;
@@ -391,10 +407,10 @@ body {
   color: #fff;
   text-align: center;
   line-height: 40px;
-  margin-top: 10px;
 }
 #brd_detail .center .comment_box {
-  padding: 50px 0;
+  border-top: 1px solid #e2e2e2;
+  padding: 30px 0;
 }
 #brd_detail .center .comment_box .comment_context {
   white-space: pre;
@@ -438,7 +454,7 @@ body {
   margin-right: 5px;
 }
 #brd_detail .center .detail_btns {
-  margin-bottom: 240px;
+  margin-bottom: 30px;
 }
 #brd_detail .center .detail_btns a {
   display: inline-block;
@@ -503,6 +519,10 @@ body {
   padding-left: 15px;
   box-sizing: border-box;
 }
+#brd_insert .center form .line .file {
+  width: 100%;
+  line-height: 45px;
+}
 #brd_insert .center form textarea {
   width: 730px;
   height: 240px;
@@ -519,4 +539,78 @@ body {
   color: #fff;
   border-radius: 5px;
   margin-bottom: 60px;
+}
+
+#about_us > div {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+}
+#about_us > div .center {
+  width: 1100px;
+}
+#about_us > div .center h3 {
+  font-size: 45px;
+  color: #000;
+  margin-bottom: 80px;
+}
+#about_us > div .center h3::after {
+  content: "";
+  display: block;
+  margin-top: 15px;
+  width: 180px;
+  height: 1px;
+  background-color: #8e6d45;
+}
+#about_us > div .center p {
+  font-size: 15px;
+  color: #666;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+#about_us > div .center .readMore {
+  font-size: 25px;
+  color: #8e6d45;
+}
+#about_us .welcome .center {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+#about_us .welcome .center .left_box {
+  width: 50%;
+  padding: 15px;
+}
+#about_us .welcome .center .right_box {
+  display: flex;
+}
+#about_us .welcome .center .right_box img {
+  position: absolute;
+  width: 250px;
+}
+#about_us .welcome .center .right_box .img01 {
+  right: 260px;
+  bottom: 0;
+}
+#about_us .welcome .center .right_box .img02 {
+  right: 0;
+  top: 0;
+}
+#about_us .services .center .boxs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+#about_us .services .center .boxs .box {
+  width: 350px;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
+}
+#about_us .services .center .boxs .box .img_box img {
+  width: 100%;
+}
+#about_us .services .center .boxs .box .text_box {
+  padding: 35px;
+}
+#about_us .services .center .boxs .box .text_box p {
+  margin-bottom: 0;
 }

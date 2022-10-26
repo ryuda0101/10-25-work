@@ -205,9 +205,10 @@ body {
     display:flex; justify-content:center;
     .center {
         width:$center;
+        margin:130px 0;
         background-color:#fff;
         .top_text {
-            margin:130px 0 70px;
+            margin-bottom:70px;
             h2,p {
                 text-align:center;
                 font-size:40px;
@@ -216,7 +217,7 @@ body {
             p {font-size:15px; margin-top:10px;}
         }
         table {
-            margin-bottom:120px; width:100%;
+            width:100%; margin-bottom:30px;
             tr {
                 line-height:70px;
                 th {
@@ -230,9 +231,18 @@ body {
             .brd_bot {
                 border-bottom:1px solid #e2e2e2;
             }
+            .title {
+                text-align:left;
+            }
+        }
+        .write {
+            margin-bottom:120px;
+            display:inline-block; width:80px; height:40px;
+            background-color:#adb5bd; border-radius:3px;
+            color:#fff; text-align:center; line-height:40px;
+            margin-right:5px;
         }
         .search_menu {
-            margin-bottom:120px;
             select {
                 border:1px solid #e2e2e2;
                 width:85px; height:40px; border-radius:3px;
@@ -252,6 +262,7 @@ body {
 #brd_detail {
     display:flex; justify-content:center;
     .center {
+        margin:130px 0;
         .top_text {
             margin:130px 0 70px;
             h2,p {
@@ -262,13 +273,13 @@ body {
             p {font-size:15px; margin-top:10px;}
         }
         .brd_detail {
-            margin:0 0 30px 0;
+            margin-bottom:30px;
             width:$center;
             tr {
                 line-height:70px;
+                border-bottom:1px solid #e2e2e2;
                 th {
                     text-align:left;
-                    border-bottom:1px solid #e2e2e2;
                     white-space:pre;
                     font-weight:normal;
                 }
@@ -292,23 +303,26 @@ body {
             .top_line {border-top:1px solid #000;}
         }
         .comment {
-            border-bottom:1px solid #e2e2e2; padding:50px 0;
+            margin-bottom:30px;
             #comment_form {
                 textarea {
                     width:100%; height:100px;
                     border:1px solid #000;
+                    margin-bottom:10px;
                 }
                 button {
                     display:inline-block; width:80px; height:40px;
                     background-color:#adb5bd; border-radius:3px;
                     color:#fff; text-align:center; line-height:40px;
-                    margin-top:10px;
                 }
             }
         }
         .comment_box {
-            padding:50px 0;
-            .comment_context {white-space:pre;}
+            border-top:1px solid #e2e2e2;
+            padding:30px 0;
+            .comment_context {
+                white-space:pre;
+            }
             .comment_date,.comment_auther {text-align:right;}
             .comment_btn {
                 display:flex;
@@ -337,7 +351,7 @@ body {
 
 
         .detail_btns {
-            margin-bottom:240px;
+            margin-bottom:30px;
             a {
                 display:inline-block; width:80px; height:40px;
                 background-color:#adb5bd; border-radius:3px;
@@ -387,6 +401,9 @@ body {
                     padding-left:15px;
                     box-sizing:border-box;
                 }
+                .file {
+                    width:100%; line-height:45px;
+                }
             }
             textarea {
                 width:730px; height:240px;
@@ -405,4 +422,79 @@ body {
     }
 }
 
-// 게시글 수정 페이지
+// 서브페이지01 / about_us
+#about_us {
+    >div {
+        display:flex; justify-content:center;
+        margin:100px 0;
+        .center {
+            width:$center;
+            h3 {
+                font-size:45px; color:#000;
+                margin-bottom:80px;
+                &::after {
+                    content:""; display:block; margin-top:15px;
+                    width:180px; height:1px; background-color:#8e6d45;
+                }
+            }
+            p {
+                font-size:15px; color:#666;
+                line-height:30px;
+                margin-bottom:40px;
+            }
+            .readMore {
+                font-size:25px; color:#8e6d45;
+            }
+        }
+    }
+    .welcome {
+        .center {
+            display:flex; justify-content:space-between;
+            position:relative;
+            .left_box {
+                width:50%; padding:15px;
+            }
+            .right_box {
+                display:flex;
+                img {
+                    position:absolute;
+                    width:250px;
+                }
+                .img01 {
+                    right:260px;
+                    bottom:0;
+                }
+                .img02 {
+                    right:0;
+                    top:0;
+                }
+            }
+
+        }
+    }
+    .services {
+        .center {
+            .boxs {
+                display:flex; justify-content:space-between; margin-bottom:40px;
+                .box {
+                    width:350px; box-shadow:0 0 10px rgba(100,100,100,0.5);
+                    .img_box {
+                        img {
+                            width:100%;
+                        }
+                    }
+                    .text_box {
+                        padding:35px;
+                        p {
+                            margin-bottom:0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .clients_say {
+        
+    }
+    .team_members {}
+}

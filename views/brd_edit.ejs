@@ -47,7 +47,8 @@
                     <p>info@luxuryhotel.com</p>
                 </div>
             </div>
-            <form action="/add" method="get">
+            <form action="/update" method="post">
+                <input type="hidden" name="hidden" value="<%- brdinfo.brd_id %>">
                 <div class="line">
                     <input type="text" name="name" disabled value="<%- userData.joinnick %>">
                     <input type="text" name="email" value="<%- brdinfo.brd_email %>">
@@ -55,6 +56,9 @@
                 <div class="line">
                     <input type="text" name="title" value="<%- brdinfo.brd_title %>">
                     <input type="text" name="number" value="<%- brdinfo.brd_number %>">
+                </div>
+                <div class="line">
+                    <input type="file" name="file" class="file" value="<%- brdinfo.fileName %>">
                 </div>
                 <textarea name="message" placeholder="Write message"><%- brdinfo.brd_context %></textarea>
                 <button type="submit">SEND MESSAGE</button>

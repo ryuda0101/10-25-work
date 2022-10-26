@@ -31,7 +31,7 @@
             <table class="brd_top">
                 <tr class="brd_top">
                     <th class="number">번호</th>
-                    <th class="title">제목</th>
+                    <th >제목</th>
                     <th class="date">등록일자</th>
                     <th class="auther">작성자</th>
                 </tr>
@@ -45,6 +45,7 @@
                     </tr>
                 <% }); %>
             </table>
+            <a class="write" href="/insert">글 작성</a>
             <!-- 검색 메뉴 -->
             <form action="/search" method="get" class="search_menu">
                 <select name="search_menu" id="search_menu">

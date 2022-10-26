@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서브페이지</title>
+        <!-- 아이콘 관련 링크 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+        <!-- 폰트 관련 링크 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+    <%- include("common/banner.ejs") %>
+    <div id="about_us">
+        <div class="welcome">
+            <div class="center">
+                <div class="left_box">
+                    <h3>Welcome to Our Hotel</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                    <a class="readMore" href="#">Read More</a>
+                </div>
+                <div class="right_box">
+                    <img class="img01" src="/img/subpage_1.jpg">
+                    <img class="img02" src="/img/subpage_2.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="services">
+            <div class="center">
+                <h3>Extra Services</h3>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+                <div class="boxs">
+                    <div class="box">
+                        <div class="img_box">
+                            <img src="/img/subpage_5.jpg">
+                        </div>
+                        <div class="text_box">
+                            <h4>Room Breakfast</h4>
+                            <h5>$70<span>/ daily</span></h5>
+                            <p><i class="fa-solid fa-check"></i> Morbi varius dui ut faucibus mattis.</p>
+                            <p><i class="fa-solid fa-check"></i> Proin ornare diam ac ornare pretium.</p>
+                            <p><i class="fa-solid fa-check"></i> Sed mattis magna a gravida interdum.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="img_box">
+                            <img src="/img/subpage_4.jpg">
+                        </div>
+                        <div class="text_box">
+                            <h4>Drink included</h4>
+                            <h5>$30<span>/ daily</span></h5>
+                            <p><i class="fa-solid fa-check"></i> Morbi varius dui ut faucibus mattis.</p>
+                            <p><i class="fa-solid fa-check"></i> Proin ornare diam ac ornare pretium.</p>
+                            <p><i class="fa-solid fa-x"></i> Sed mattis magna a gravida interdum.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="img_box">
+                            <img src="/img/subpage_3.jpg">
+                        </div>
+                        <div class="text_box">
+                            <h4>Room Cleaning</h4>
+                            <h5>$50<span>/ daily</span></h5>
+                            <p><i class="fa-solid fa-check"></i> Morbi varius dui ut faucibus mattis.</p>
+                            <p><i class="fa-solid fa-x"></i> Proin ornare diam ac ornare pretium.</p>
+                            <p><i class="fa-solid fa-check"></i> Sed mattis magna a gravida interdum.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="readMore" href="#">Read More</a>
+            </div>
+        </div>
+        <div class="clients_say">
+            <div class="center">
+                <h3>What Client's Say?</h3>
+                <p>Vivamus accumsan nibh vel mauris pellentesque, eget malesuada augue blandit.</p>
+                <div class="customers">
+                    <div class="customer">
+                        <span><img src="/img/quotes.png"></span>
+                        <div class="text_box">
+                            <p>It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                        </div>
+                        <div class="auther">
+                            <img src="/img/customer1.png">
+                            <p>Emily White</p>
+                            <p class="guest">Guest Review</p>
+                        </div>
+                    </div>
+                    <div class="customer">
+                        <span><img src="/img/quotes.png"></span>
+                        <div class="text_box">
+                            <p>It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                        </div>
+                        <div class="auther">
+                            <img src="/img/customer2.png">
+                            <p>Gerard Way</p>
+                            <p class="guest">Guest Review</p>
+                        </div>
+                    </div>
+                    <div class="customer">
+                        <span><img src="/img/q uotes.png"></span>
+                        <div class="text_box">
+                            <p>It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                        </div>
+                        <div class="auther">
+                            <img src="/img/customer3.png">
+                            <p>Ethan Torchio</p>
+                            <p class="guest">Guest Review</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="team_members">
+            <div class="center">
+                <h3>Meet The Team</h3>
+                <p>Sed sed mi et nibh fringilla pellentesque at viverra odio.</p>
+                <div class="team_boxs">
+                    <div class="box">
+                        <div class="img_box">
+                            <img src="/img/team1.png">
+                        </div>
+                        <div class="text_box">
+                            <h4>Support Mannager</h4>
+                            <h5>Victoria Angelis</h5>
+                            <ul class="sns">
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="img_box">
+                            <img src="/img/team2.png">
+                        </div>
+                        <div class="text_box">
+                            <h4>Support Mannager</h4>
+                            <h5>Damiano David</h5>
+                            <ul class="sns">
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="img_box">
+                            <img src="/img/team3.png">
+                        </div>
+                        <div class="text_box">
+                            <h4>Support Mannager</h4>
+                            <h5>Thomas Raggi</h5>
+                            <ul class="sns">
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("common/footer.ejs") %>
+</body>
+</html>
