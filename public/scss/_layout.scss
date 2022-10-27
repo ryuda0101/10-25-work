@@ -68,6 +68,28 @@ body {
         }
     }
 }
+// 메인화면 배너
+.main_banner {
+    position:relative;
+    .center {
+        .check_box {
+            width:100%; display:flex; justify-content:center;
+            position:absolute;
+            bottom:30px; right:50%; transform:translateX(50%);
+            input {
+                width:180px; height:62px;
+            }
+            select {
+                width:180px; height:62px;
+            }
+            a {
+                width:180px; height:62px; display:inline-block;
+                background-color:#aa8453; color:#fff;
+                line-height:62px;
+            }
+        }
+    }
+}
 
 // 풋터
 #footer {
@@ -426,7 +448,7 @@ body {
 #about_us {
     >div {
         display:flex; justify-content:center;
-        margin:100px 0;
+        padding:100px 0;
         .center {
             width:$center;
             h3 {
@@ -485,6 +507,9 @@ body {
                     }
                     .text_box {
                         padding:35px;
+                        h5 {
+                            margin:15px 0;
+                        }
                         p {
                             margin-bottom:0;
                         }
@@ -494,7 +519,161 @@ body {
         }
     }
     .clients_say {
-        
+        background-color:#555;
+        .center {
+            overflow:hidden;
+            h3 {color:#fff;}
+            p {color:#fff;}
+            .customers {
+                display:flex; width:300%;
+                position:relative;
+                // 스크립트에서 btns 하단 버튼 누르면 left:33.333333% 해주기!
+                left:0; transition:all 0.5s;
+                .customer {
+                    position:relative;
+                    width:33.333333%;
+                    margin:0 10px;
+                    overflow:hidden;
+                    span {
+                        position:absolute;
+                        right:0; bottom:0;
+                        img {
+                            width:100px; opacity:0.5;
+                        }
+                    }
+                    .auther {
+                        display:flex; align-items:center;
+                        img {
+                            border-radius:50%;
+                        }
+                        .auther_info {
+                            p {
+                                margin-left:15px;
+                                margin-bottom:0;
+                            }
+                        }
+                    }
+
+                }
+            }
+            .btns {
+                text-align:center; margin-top:30px;
+                span {
+                    display:inline-block; border-radius:50%;
+                    width:20px; height:20px;
+                    margin:0 10px; cursor:pointer;
+                    border:1px solid #fff;
+                }
+                .on {
+                    background-color:#8e6d45;
+                    border:1px solid #8e6d45;
+                }
+            }
+        }
     }
-    .team_members {}
+    .team_members {
+        background-color:#f8f5f0;
+        .center {
+            h3 {}
+            .team_boxs {
+                display:flex; justify-content:space-between;
+                .box {
+                    .img_box {
+                        img {}
+                    }
+                    .text_box {
+                        background-color:#fff;
+                        padding:30px 0;
+                        text-align:center;
+                        h4 {
+                            font-size:20px;
+                        }
+                        h5 {
+                            margin:15px 0;
+                        }
+                        .sns {
+                            display:flex; justify-content:center;
+                            li {
+                                margin:0 10px;
+                                a {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 메인페이지
+#main_page {
+    >div {
+        display:flex; justify-content:center;
+        padding:100px 0;
+        .center {
+            width:$center;
+            h2 {
+                font-size:45px; color:#000;
+                margin-bottom:80px;
+                &::after {
+                    content:""; display:block; margin-top:15px;
+                    width:180px; height:1px; background-color:#8e6d45;
+                }
+            }
+            p {
+                font-size:15px; color:#666;
+                line-height:30px;
+                margin-bottom:40px;
+            }
+        }
+    }
+
+    .welcome {
+        background-color:#002C31;
+        text-align:center;
+        .center {
+            h2 {
+                color:#F1A691;
+                &::after {margin:15px auto; background-color:#F1A691;}
+            }
+            p {
+                color:#F1A691;
+            }
+        }
+    }
+    .looking_for {
+        .center {
+            h2 {}
+            .context_boxs {
+                display:flex; justify-content:space-between;
+                .left_box {
+                    width:45%;
+                    img {width:100%;}
+                }
+                .right_box {
+                    width:45%;
+                    .line {
+                        margin-bottom: 40px;
+                        display:flex; 
+                        i {
+                            font-size:80px; margin:auto 0;
+                            margin-right:30px; width:90px;
+                        }
+                        .text {
+                            h3 {}
+                            p {
+                                margin-bottom:0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .rooms {}
+    .facilities {}
+    .count {}
+    .news {}
+    .gift {}
+    .more_gift {}
 }
