@@ -809,7 +809,7 @@ body {
   flex-wrap: wrap;
 }
 #main_page .rooms .center .boxs .box {
-  width: 290px;
+  width: 350px;
   position: relative;
   overflow: hidden;
 }
@@ -875,6 +875,182 @@ body {
   margin: 0 5px;
 }
 #main_page .rooms .center .boxs .box.width {
-  width: 450px;
+  width: 535px;
   margin-top: 30px;
+}
+#main_page .facilities .center {
+  width: 1140px;
+}
+#main_page .facilities .center .boxs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#main_page .facilities .center .boxs .box {
+  position: relative;
+  margin: 7px;
+}
+#main_page .facilities .center .boxs .box .img_box.big {
+  width: 745px;
+  height: 250px;
+  overflow: hidden;
+}
+#main_page .facilities .center .boxs .box .img_box.big img {
+  width: 100%;
+}
+#main_page .facilities .center .boxs .box .img_box.long {
+  width: 365px;
+  height: 530px;
+  background-color: red;
+}
+#main_page .facilities .center .boxs .box .img_box.long img {
+  width: 100%;
+}
+#main_page .facilities .center .boxs .box .text_box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+}
+#main_page .facilities .center .boxs .box .text_box h3 {
+  color: #fff;
+}
+#main_page .facilities .center .boxs .box .text_box a {
+  color: #fff;
+}
+#main_page .count {
+  background: #002C31;
+}
+#main_page .count .center {
+  display: flex;
+  justify-content: space-between;
+}
+#main_page .count .center .count_one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#main_page .count .center .count_one .icon {
+  margin-right: 20px;
+}
+#main_page .count .center .count_one .icon i {
+  font-size: 70px;
+  color: #F1A691;
+}
+#main_page .count .center .count_one .text {
+  color: #fff;
+}
+#main_page .count .center .count_one .text span {
+  font-size: 30px;
+}
+#main_page .news .center .boxs {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#main_page .news .center .boxs:hover .btns .left {
+  left: 10px;
+}
+#main_page .news .center .boxs:hover .btns .right {
+  right: 10px;
+}
+#main_page .news .center .boxs .btns {
+  display: flex;
+  justify-content: space-between;
+}
+#main_page .news .center .boxs .btns i {
+  position: absolute;
+  font-size: 100px;
+  color: blue;
+  z-index: 99;
+  top: 55%;
+  transform: translateY(-55%);
+  transition: all 0.5s;
+}
+#main_page .news .center .boxs .btns .left {
+  left: -100px;
+}
+#main_page .news .center .boxs .btns .right {
+  right: -100px;
+}
+#main_page .news .center .boxs .view {
+  width: 500%;
+  position: relative;
+  left: 0;
+  display: flex;
+}
+#main_page .news .center .boxs .view .box {
+  margin-right: 30px;
+}
+#main_page .news .center .boxs .view .box .img_box {
+  position: relative;
+}
+#main_page .news .center .boxs .view .box .img_box .date_box {
+  margin: 30px;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  border: 1px solid #fff;
+}
+#main_page .news .center .boxs .view .box .img_box .date_box p {
+  color: red;
+}
+#main_page .news .center .boxs .view .box .text_box {
+  background-color: #002C31;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+#main_page .news .center .boxs .view .box .text_box h3 {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+#main_page .news .center .boxs .view .box .text_box p {
+  font-size: 12px;
+}
+#main_page .gift .center p {
+  margin-bottom: 40px;
+}
+#main_page .gift .center img {
+  width: 100%;
+}
+#main_page .contact_us .center p {
+  margin-bottom: 40px;
+}
+#main_page .contact_us .center .contact_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 667px;
+  margin: 0 auto;
+}
+#main_page .contact_us .center .contact_box input {
+  width: 667px;
+  height: 58px;
+  border: 1px solid #000;
+  padding-left: 15px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+#main_page .contact_us .center .contact_box .top_line {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#main_page .contact_us .center .contact_box .top_line input {
+  width: 325px;
+  height: 58px;
+}
+#main_page .contact_us .center .contact_box a {
+  width: 168px;
+  height: 44px;
+  color: #002C31;
+  border: 1px solid #002C31;
+  margin-bottom: 60px;
+  line-height: 44px;
+  text-align: center;
+  font-weight: bold;
 }

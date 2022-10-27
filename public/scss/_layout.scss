@@ -676,7 +676,7 @@ body {
             .boxs {
                 display:flex; justify-content:space-between; flex-wrap:wrap;
                 .box {
-                    width:290px;
+                    width:350px;
                     position:relative;
                     overflow:hidden;
                     &:hover {
@@ -734,14 +734,168 @@ body {
                     }
                 }
                 .box.width {
-                    width:450px; margin-top:30px;
+                    width:535px; margin-top:30px;
                 }
             }
         }
     }
-    .facilities {}
-    .count {}
-    .news {}
-    .gift {}
-    .more_gift {}
+    .facilities {
+        .center {
+            width:1140px;
+            .boxs {
+                width:100%;
+                display:flex; justify-content:space-between;
+                flex-wrap:wrap;
+                .box {
+                    position:relative; margin:7px;
+                    .img_box {
+                        img {}
+                    }
+                    .img_box.big {
+                        width:745px; height:250px; overflow:hidden;
+                        img {width:100%;}
+                    }
+                    .img_box.long {
+                        width:365px; height:530px; background-color:red;
+                        img {width:100%;}
+                    } 
+                    .text_box {
+                        position:absolute; bottom:0; left:0; padding:15px;
+                        h3 {
+                            color:#fff;
+                        }
+                        a {
+                            color:#fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .count {
+        background:#002C31;
+        .center {
+            display:flex; justify-content:space-between;
+            .count_one {
+                display:flex; justify-content:space-between;
+                align-items:center;
+                .icon {
+                    margin-right:20px;
+                    i {
+                        font-size:70px;
+                        color:#F1A691;
+                    }
+                }
+                .text {
+                    color:#fff;
+                    span {
+                        font-size:30px;
+                    }
+                    p {}
+                }
+            }
+        }
+    }
+    .news {
+        .center {
+            .boxs {
+                width:100%;
+                overflow:hidden; position:relative;
+                &:hover {
+                    .btns {
+                        .left {
+                            left:10px;
+                        }
+                        .right {
+                            right:10px;
+                        }
+                    }
+                }
+                .btns {
+                    display:flex; justify-content:space-between;
+                    i {
+                        position:absolute; font-size:100px; color:blue; z-index:99;
+                        top:55%; transform:translateY(-55%); transition:all 0.5s;
+                    }
+                    .left {
+                        left:-100px;
+                    }
+                    .right {
+                        right:-100px;
+                    }
+                }
+                .view {
+                    // 스크립트에서 left값 바꿔주기!
+                    width:500%; position:relative; left:0; display:flex;
+                    .box {
+                        margin-right:30px;
+                        .img_box {
+                            position:relative;
+                            .date_box {
+                                margin:30px;
+                                padding:15px;
+                                position:absolute; top:0; left:0;
+                                text-align:center;
+                                border:1px solid #fff;
+                                p {
+                                    color:red;
+                                }
+                            }
+                            img {}
+                        }
+                        .text_box {
+                            background-color:#002C31; color:#fff; padding:20px; box-sizing:border-box;
+                            h3 {
+                                font-size:25px; margin-bottom:5px;
+                            }
+                            p {
+                                font-size:12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .gift {
+        .center {
+            h2 {}
+            p {
+                margin-bottom:40px;
+            }
+            img {
+                width:100%;
+            }
+        }
+    }
+    .contact_us {
+        .center {
+            h2 {}
+            p {
+                margin-bottom:40px;
+            }
+            .contact_box {
+                display:flex; flex-direction:column; align-items:center;
+                width:667px; margin:0 auto;
+                input {
+                    width:667px; height:58px; border:1px solid #000;
+                    padding-left:15px;
+                    box-sizing:border-box; margin-bottom:15px;
+                }
+                .top_line {
+                    display:flex; justify-content:space-between; width:100%;
+                    input {
+                        width:325px; height:58px;
+                    }
+                }
+                a {
+                    width:168px; height:44px;
+                    color:#002C31; border:1px solid #002C31;
+                    margin-bottom:60px;
+                    line-height:44px; text-align:center;
+                    font-weight:bold;
+                }
+            }
+        }
+    }
 }
