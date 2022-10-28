@@ -294,8 +294,20 @@ app.get("/logout",function(req,res){
     });
 });
 
+// 회원정보 수정 페이지
+app.get("/userInfo",function(req,res){
+    res.render("user_info",{userData:req.user});
+});
 
-// app.post("/userJoin")
+app.post("/userInfoChg",function(req,res){
+    db.collection("userInfo").updateOne({joinid:req.user.joinid},{$set:{
+        joinnick:req.body.username,
+        joinpass:req.body.userpass
+    }},function(err,result){
+        res.redirect("/");
+    });
+});
+
 
 
 // html과 같은 정적인 파일 보낼때는 app.get.sendFile(__dirname + "/불러들일 html파일 경로")

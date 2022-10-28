@@ -180,8 +180,14 @@
         <div class="facilities">
             <div class="center">
                 <h2>Hotel Facilities</h2>
+                <ul class="facilitiesBtns">
+                    <li data-facilities = "*">All</li>
+                    <li data-facilities = ".food">food</li>
+                    <li data-facilities = ".relax">relax</li>
+                    <li data-facilities = ".health">health</li>
+                </ul>
                 <div class="boxs">
-                    <div class="box">
+                    <div class="box food">
                         <div class="img_box">
                             <img src="/img/facilities01.jpg">
                         </div>
@@ -190,7 +196,7 @@
                             <a href="#">See more</a>
                         </div>
                     </div>
-                    <div class="box">
+                    <div class="box relax health">
                         <div class="img_box">
                             <img src="/img/facilities02.jpg">
                         </div>
@@ -199,7 +205,7 @@
                             <a href="#">See more</a>
                         </div>
                     </div>
-                    <div class="box">
+                    <div class="box health">
                         <div class="img_box long">
                             <img src="/img/facilities03.jpg">
                         </div>
@@ -208,7 +214,7 @@
                             <a href="#">See more</a>
                         </div>
                     </div>
-                    <div class="box">
+                    <div class="box health">
                         <div class="img_box big">
                             <img src="/img/facilities04.jpg">
                         </div>
@@ -217,7 +223,7 @@
                             <a href="#">See more</a>
                         </div>
                     </div>
-                    <div class="box">
+                    <div class="box food relax">
                         <div class="img_box">
                             <img src="/img/facilities05.jpg">
                         </div>
@@ -226,7 +232,7 @@
                             <a href="#">See more</a>
                         </div>
                     </div>
-                    <div class="box">
+                    <div class="box food">
                         <div class="img_box">
                             <img src="/img/facilities06.jpg">
                         </div>
@@ -235,7 +241,7 @@
                             <a href="#">See more</a>
                         </div>
                     </div>
-                    <div class="box">
+                    <div class="box food">
                         <div class="img_box">
                             <img src="/img/facilities06.jpg">
                         </div>
@@ -251,19 +257,19 @@
             <div class="center">
                 <div class="count_one">
                     <div class="icon"><i class="fa-solid fa-tags"></i></div>
-                    <div class="text"><span>00</span><p>Lorem ipsum dolor</p></div>
+                    <div class="text1 text"><span>00</span><p>Lorem ipsum dolor</p></div>
                 </div>
                 <div class="count_one">
                     <div class="icon"><i class="fa-solid fa-users"></i></div>
-                    <div class="text"><span>00</span><p>Lorem ipsum dolor</p></div>
+                    <div class="text2 text"><span>00</span><p>Lorem ipsum dolor</p></div>
                 </div>
                 <div class="count_one">
                     <div class="icon"><i class="fa-sharp fa-solid fa-plane"></i></div>
-                    <div class="text"><span>00</span><p>Lorem ipsum dolor</p></div>
+                    <div class="text3 text"><span>00</span><p>Lorem ipsum dolor</p></div>
                 </div>
                 <div class="count_one">
                     <div class="icon"><i class="fa-solid fa-earth-americas"></i></div>
-                    <div class="text"><span>00</span><p>Lorem ipsum dolor</p></div>
+                    <div class="text4 text"><span>00</span><p>Lorem ipsum dolor</p></div>
                 </div>
             </div>
         </div>
@@ -346,12 +352,14 @@
             </div>
         </div>
         <div class="gift">
+            <span class="gift_bg"></span>
             <div class="center">
                 <h2>The Perfect Gift</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit auctor euismod. Integer tempor pulvinar eleifend. Suspendisse mollis id est ac volutpat. Ut euismod a neque nec porta. Cras sodales dictum odio, at cursus sapien cursus tincidunt. In ut quam neque. Fusce varius elementum est, et molestie ipsum gravida quis. Sed ac sodales ex. Curabitur dui justo, efficitur quis elit non, sollicitudin commodo elit. Vivamus vehicula vestibulum mollis. Nullam aliquam quam metus, nec dapibus metus volutpat et. Fusce aliquam fringilla imperdiet. Nullam vitae elit nec metus vulputate posuere eget sed sapien. Aliquam sagittis tortor pulvinar egestas convallis.</p>
                 <img src="/img/gift.jpg">
             </div>
         </div>
+
         <div class="contact_us">
             <div class="center">
                 <h2>Contact Us</h2>
@@ -368,5 +376,11 @@
         </div>
     </div>
     <%- include("common/footer.ejs") %>
+
+    <!-- isotope 관련 스크립트 -->
+    <script src="js/main_news.js"></script>
+    <script src="js/facilities.js"></script>
+    <!-- 카운트 관련 스크립트 -->
+    <script src="js/count.js"></script>
 </body>
 </html>

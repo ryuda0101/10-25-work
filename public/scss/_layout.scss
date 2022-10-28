@@ -53,15 +53,15 @@ body {
 
 // 배너
 #banner {
-    background-image:url(/img/3_1.png);
+    background-image:url(/img/01.png);
     background-attachment:fixed;
     background-size:cover; background-repeat:no-repeat;
     height:500px;
     display:flex; justify-content:center; align-items:center;
     .center {
         width:$center;
-        color:#fff;
         text-align:center;
+        color:#002C31;
         h2 {
             font-size:40px;
             margin-bottom:20px;
@@ -186,11 +186,22 @@ body {
                     padding:5px 10px;
                     margin-bottom:25px;
                 }
-                button {
-                    width:145px; height:40px; border-radius:30px;
-                    color:#fff; background-color:blue;
-                    display:block; text-align:center;
-
+                .btns {
+                    display:flex; justify-content:space-between;
+                    width:100%; box-shadow:none;
+                    button {
+                        width:45%; height:50px; border-radius:30px;
+                        color:#fff; background-color:blue;
+                        display:block; text-align:center;
+                        box-shadow:0px 0px 10px #888;
+                        font-size:20px;
+                    }
+                    .button {
+                        width:45%; height:50px; border-radius:30px;
+                        color:#fff; background-color:blue;
+                        display:block; text-align:center;
+                        line-height:50px; box-shadow:0px 0px 10px #888;
+                    }
                 }
             }
             a {
@@ -219,6 +230,14 @@ body {
     #registerBtn {
         color:blue;
     }
+}
+
+// 회원정보 수정 페이지
+.userChg {
+    .chgProfile {
+        margin:30px 0;
+    }
+    .userid {background-color:#eee;}
 }
 
 // 게시판 페이지 작업 시작
@@ -399,9 +418,9 @@ body {
         }
         .boxs {
             display:flex; justify-content:space-between;            
-            margin-bottom:55px;
+            margin-bottom:55px; width:100%;
             .box {
-                text-align:center;
+                text-align:center; width:25%;
                 i {
                     font-size:30px;
                     margin-bottom:30px;
@@ -698,7 +717,7 @@ body {
                         img {width:100%;}
                         span {
                             transition:all 0.5s;
-                            width:100%; height:400px;
+                            width:100%; height:500px;
                             display:inline-block;
                             position:absolute;
                         }
@@ -740,25 +759,26 @@ body {
         }
     }
     .facilities {
+        height:100%;
         .center {
             width:1140px;
+            .facilitiesBtns {
+                display:flex; justify-content:center;
+                li {
+                    margin:15px 30px;
+                    cursor:pointer;
+                    font-size:20px;
+                }
+            }
             .boxs {
                 width:100%;
                 display:flex; justify-content:space-between;
-                flex-wrap:wrap;
+                flex-wrap:wrap; position:absolute;
                 .box {
                     position:relative; margin:7px;
                     .img_box {
                         img {}
                     }
-                    .img_box.big {
-                        width:745px; height:250px; overflow:hidden;
-                        img {width:100%;}
-                    }
-                    .img_box.long {
-                        width:365px; height:530px; background-color:red;
-                        img {width:100%;}
-                    } 
                     .text_box {
                         position:absolute; bottom:0; left:0; padding:15px;
                         h3 {
@@ -769,6 +789,14 @@ body {
                         }
                     }
                 }
+                .big {
+                    width:745px; height:250px; overflow:hidden;
+                    img {width:100%;}
+                }
+                .long {
+                    width:365px; height:530px; background-color:red;
+                    img {width:100%;}
+                } 
             }
         }
     }
@@ -799,7 +827,7 @@ body {
     .news {
         .center {
             .boxs {
-                width:100%;
+                width:1110px; 
                 overflow:hidden; position:relative;
                 &:hover {
                     .btns {
@@ -814,8 +842,8 @@ body {
                 .btns {
                     display:flex; justify-content:space-between;
                     i {
-                        position:absolute; font-size:100px; color:blue; z-index:99;
-                        top:55%; transform:translateY(-55%); transition:all 0.5s;
+                        position:absolute; font-size:100px; color:#002C31; z-index:99;
+                        top:50%; transform:translateY(-50%); transition:all 0.5s;
                     }
                     .left {
                         left:-100px;
@@ -827,8 +855,9 @@ body {
                 .view {
                     // 스크립트에서 left값 바꿔주기!
                     width:500%; position:relative; left:0; display:flex;
+                    transition:all 0.5s;
                     .box {
-                        margin-right:30px;
+                        margin:0 10px;
                         .img_box {
                             position:relative;
                             .date_box {
@@ -858,6 +887,12 @@ body {
         }
     }
     .gift {
+        position:relative;
+        .gift_bg {
+            z-index:-1;
+            width:100%; height:422.5px; background-color:#002C31;
+            position:absolute; bottom:0;
+        }
         .center {
             h2 {}
             p {
@@ -868,6 +903,7 @@ body {
             }
         }
     }
+
     .contact_us {
         .center {
             h2 {}
@@ -894,6 +930,59 @@ body {
                     margin-bottom:60px;
                     line-height:44px; text-align:center;
                     font-weight:bold;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+// 반응형 작업 시작
+
+@media (max-width: 1200px) {
+    
+}
+
+
+@media (max-width: 1000px) {
+    // 로그인, 회원가입 페이지
+    #login_page {
+        .center {
+            width:500px; padding:60px 0;
+            .right_box {
+                display:none;
+            }
+        }
+    }
+
+    // 게시판 페이지
+    #brd_list {
+        .center {
+            width:800px;
+            .write {
+                margin-bottom:80px;
+            }
+        }
+    }
+    // 게시글 상세 페이지
+    #brd_detail {
+        .center {
+            .brd_detail {
+                width:800px;
+            }
+        }
+    }
+    // 게시글 작성, 수정 페이지
+    #brd_insert {
+        .center {
+            width:800px;
+            .boxs {
+                width:100%;
+                .box {
+                    width:25%;
                 }
             }
         }

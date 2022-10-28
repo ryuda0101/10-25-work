@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+        <!-- 아이콘 관련 링크 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+        <!-- 폰트 관련 링크 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include("common/header") %>
+    <%- include("common/banner") %>
+
+    <div id="login_page" class="userChg">
+        <div class="center">
+            <div class="left_box">
+                <h2 class="chgProfile">Change Your Profile</h2>
+                <form class="loginForm" action="/userInfoChg" method="post">
+                    <input type="text" name="username" class="username" placeholder="<%- userData.joinnick %>">
+                    <input type="text" name="userid" class="userid" value="<%- userData.joinid %>" disabled>
+                    <input type="password" name="userpass" class="userpass">
+                    <div class="btns">
+                        <button type="submit">save</button>
+                        <a class="button" href="/">CANCEL</a>
+                    </div>
+                </form>
+            </div>
+            <div class="right_box">
+                <img src="/img/login_img3.png">
+                <div class="text_box">
+                    <h3>Join with us</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include("common/footer") %>
+</body>
+</html>

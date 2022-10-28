@@ -98,7 +98,7 @@ body {
 }
 
 #banner {
-  background-image: url(/img/3_1.png);
+  background-image: url(/img/01.png);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -109,8 +109,8 @@ body {
 }
 #banner .center {
   width: 1100px;
-  color: #fff;
   text-align: center;
+  color: #002C31;
 }
 #banner .center h2 {
   font-size: 40px;
@@ -257,14 +257,33 @@ body {
   padding: 5px 10px;
   margin-bottom: 25px;
 }
-#login_page .center .left_box .loginForm button {
-  width: 145px;
-  height: 40px;
+#login_page .center .left_box .loginForm .btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: none;
+}
+#login_page .center .left_box .loginForm .btns button {
+  width: 45%;
+  height: 50px;
   border-radius: 30px;
   color: #fff;
   background-color: blue;
   display: block;
   text-align: center;
+  box-shadow: 0px 0px 10px #888;
+  font-size: 20px;
+}
+#login_page .center .left_box .loginForm .btns .button {
+  width: 45%;
+  height: 50px;
+  border-radius: 30px;
+  color: #fff;
+  background-color: blue;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: 0px 0px 10px #888;
 }
 #login_page .center .left_box a {
   color: #555;
@@ -290,6 +309,13 @@ body {
 }
 #Register_btns #registerBtn {
   color: blue;
+}
+
+.userChg .chgProfile {
+  margin: 30px 0;
+}
+.userChg .userid {
+  background-color: #eee;
 }
 
 #brd_list {
@@ -518,9 +544,11 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 55px;
+  width: 100%;
 }
 #brd_insert .center .boxs .box {
   text-align: center;
+  width: 25%;
 }
 #brd_insert .center .boxs .box i {
   font-size: 30px;
@@ -833,7 +861,7 @@ body {
 #main_page .rooms .center .boxs .box .img_box span {
   transition: all 0.5s;
   width: 100%;
-  height: 400px;
+  height: 500px;
   display: inline-block;
   position: absolute;
 }
@@ -878,34 +906,31 @@ body {
   width: 535px;
   margin-top: 30px;
 }
+#main_page .facilities {
+  height: 100%;
+}
 #main_page .facilities .center {
   width: 1140px;
+}
+#main_page .facilities .center .facilitiesBtns {
+  display: flex;
+  justify-content: center;
+}
+#main_page .facilities .center .facilitiesBtns li {
+  margin: 15px 30px;
+  cursor: pointer;
+  font-size: 20px;
 }
 #main_page .facilities .center .boxs {
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: absolute;
 }
 #main_page .facilities .center .boxs .box {
   position: relative;
   margin: 7px;
-}
-#main_page .facilities .center .boxs .box .img_box.big {
-  width: 745px;
-  height: 250px;
-  overflow: hidden;
-}
-#main_page .facilities .center .boxs .box .img_box.big img {
-  width: 100%;
-}
-#main_page .facilities .center .boxs .box .img_box.long {
-  width: 365px;
-  height: 530px;
-  background-color: red;
-}
-#main_page .facilities .center .boxs .box .img_box.long img {
-  width: 100%;
 }
 #main_page .facilities .center .boxs .box .text_box {
   position: absolute;
@@ -918,6 +943,22 @@ body {
 }
 #main_page .facilities .center .boxs .box .text_box a {
   color: #fff;
+}
+#main_page .facilities .center .boxs .big {
+  width: 745px;
+  height: 250px;
+  overflow: hidden;
+}
+#main_page .facilities .center .boxs .big img {
+  width: 100%;
+}
+#main_page .facilities .center .boxs .long {
+  width: 365px;
+  height: 530px;
+  background-color: red;
+}
+#main_page .facilities .center .boxs .long img {
+  width: 100%;
 }
 #main_page .count {
   background: #002C31;
@@ -945,7 +986,7 @@ body {
   font-size: 30px;
 }
 #main_page .news .center .boxs {
-  width: 100%;
+  width: 1110px;
   overflow: hidden;
   position: relative;
 }
@@ -962,10 +1003,10 @@ body {
 #main_page .news .center .boxs .btns i {
   position: absolute;
   font-size: 100px;
-  color: blue;
+  color: #002C31;
   z-index: 99;
-  top: 55%;
-  transform: translateY(-55%);
+  top: 50%;
+  transform: translateY(-50%);
   transition: all 0.5s;
 }
 #main_page .news .center .boxs .btns .left {
@@ -979,9 +1020,10 @@ body {
   position: relative;
   left: 0;
   display: flex;
+  transition: all 0.5s;
 }
 #main_page .news .center .boxs .view .box {
-  margin-right: 30px;
+  margin: 0 10px;
 }
 #main_page .news .center .boxs .view .box .img_box {
   position: relative;
@@ -1010,6 +1052,17 @@ body {
 }
 #main_page .news .center .boxs .view .box .text_box p {
   font-size: 12px;
+}
+#main_page .gift {
+  position: relative;
+}
+#main_page .gift .gift_bg {
+  z-index: -1;
+  width: 100%;
+  height: 422.5px;
+  background-color: #002C31;
+  position: absolute;
+  bottom: 0;
 }
 #main_page .gift .center p {
   margin-bottom: 40px;
@@ -1053,4 +1106,32 @@ body {
   line-height: 44px;
   text-align: center;
   font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+  #login_page .center {
+    width: 500px;
+    padding: 60px 0;
+  }
+  #login_page .center .right_box {
+    display: none;
+  }
+  #brd_list .center {
+    width: 800px;
+  }
+  #brd_list .center .write {
+    margin-bottom: 80px;
+  }
+  #brd_detail .center .brd_detail {
+    width: 800px;
+  }
+  #brd_insert .center {
+    width: 800px;
+  }
+  #brd_insert .center .boxs {
+    width: 100%;
+  }
+  #brd_insert .center .boxs .box {
+    width: 25%;
+  }
 }
