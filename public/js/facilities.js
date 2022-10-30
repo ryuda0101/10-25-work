@@ -1,3 +1,10 @@
+// 정렬시킬 대상들을 감싸는 부모명 선택
+let Wrap = document.querySelector(".facilities .boxs");
+let iso = new Isotope(Wrap, {
+    itemSelector:".box",
+    layoutMode: 'masonry'
+});
+
 // 클릭시 해당 태그의 속성값 가져오기
 const isotopeBtns = document.querySelectorAll(".facilitiesBtns li");
 
@@ -15,10 +22,3 @@ isotopeBtns.forEach(function(element,index){
             });
         });
     });
-
-// 정렬시킬 대상들을 감싸는 부모명 선택
-let Wrap = document.querySelector(".facilities .boxs");
-let iso = new Isotope(Wrap, {
-    itemSelector:".box",
-    layoutMode: 'masonry'
-});

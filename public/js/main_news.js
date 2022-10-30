@@ -7,23 +7,24 @@ const right_btn = document.querySelector("#main_page .news .btns .right");
 let sNumber = 0;
 
 left_btn.addEventListener("click",function(){
+    console.log(customer.querySelectorAll(".box").length);
     if(sNumber == 0){
-        sNumber = customer.querySelectorAll(".box").length - 3;
+        sNumber = customer.querySelectorAll(".box").length - 4;
     }
     else {
         sNumber--;
     }
-    customer.style.marginLeft = -33.333333 * sNumber + "%";
+    customer.style.marginLeft = -25 * sNumber + "%";
 });
 
 right_btn.addEventListener("click",function(){
     // if(sNumber == 2){
-    if(sNumber == customer.querySelectorAll(".box").length - 3){
+    if(sNumber == customer.querySelectorAll(".box").length - 4){
         sNumber = 0;
     }
     else {
         sNumber++;
     }
-    customer.style.marginLeft = -33.333333 * sNumber + "%";
+    customer.style.marginLeft = -25 * sNumber + "%";
     console.log(sNumber);
 });

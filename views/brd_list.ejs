@@ -39,8 +39,8 @@
                 <% brdinfo.forEach(function(el, index){ %>
                     <tr class="brd_bot">
                         <th class="number"><%- el.brd_id %></th>
-                        <th class="title"><a href="/detail/<%- el.brd_id %>"><%- el.brd_title %></a></th>
-                        <th class="date"><%- el.brd_date %></th>
+                        <th class="title user_title"><a href="/detail/<%- el.brd_id %>"><%- el.brd_title %></a></th>
+                        <th class="date user_date"><%- el.brd_date %></th>
                         <th class="auther"><%- el.brd_name %></th>
                     </tr>
                 <% }); %>
