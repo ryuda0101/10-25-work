@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Gilda Display", serif;
 }
 
 ul, ol, li {
@@ -43,10 +44,6 @@ input {
 
 .logo img {
   width: 120px;
-}
-
-* {
-  font-family: "Gilda Display", serif;
 }
 
 button {
@@ -99,11 +96,24 @@ button {
 #header .bot_box .center .gnb li {
   margin: 0 15px;
 }
+#header .bot_box .center .gnb li:hover a::after {
+  width: 100%;
+}
 #header .bot_box .center .gnb li a {
   color: #002b31;
+  position: relative;
+}
+#header .bot_box .center .gnb li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #aa8453;
+  transition: all 0.5s;
 }
 #header .bot_box .center .ham_menu {
   display: none;
+  cursor: pointer;
 }
 #header .bot_box .center .ham_menu span {
   display: block;
@@ -116,6 +126,64 @@ button {
 }
 #header .bot_box .center .ham_menu .last {
   transform: translateY(-10px);
+}
+#header .ham_gnb {
+  background-color: #fff;
+  transition: all 0.5s;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header .ham_gnb .close_btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+#header .ham_gnb .close_btn span {
+  display: block;
+  width: 25px;
+  height: 1px;
+  background-color: #000;
+  cursor: pointer;
+}
+#header .ham_gnb .close_btn .first {
+  transform: rotate(45deg) translateX(1px);
+}
+#header .ham_gnb .close_btn .last {
+  transform: rotate(-45deg) translateX(0px);
+}
+#header .ham_gnb .gnb {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 65%;
+}
+#header .ham_gnb .gnb li > a {
+  font-size: 15px;
+  width: 100%;
+  font-family: "Noto Serif Display", serif;
+  font-weight: 300;
+  color: #000;
+  position: relative;
+}
+#header .ham_gnb .gnb li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: #aa8453;
+  transition: all 0.5s;
+  margin-top: 2px;
+}
+#header .ham_gnb .gnb li > a:hover::after {
+  width: 100%;
 }
 
 #banner {
@@ -181,20 +249,16 @@ button {
   display: flex;
   justify-content: space-between;
 }
-#footer .footer_info .center > div h3 {
+#footer .footer_info .center h3 {
   font-size: 25px;
   margin-bottom: 40px;
 }
-#footer .footer_info .center > div .line {
+#footer .footer_info .center .line {
   line-height: 20px;
   margin-bottom: 25px;
 }
-#footer .footer_info .center > ul h3 {
-  font-size: 25px;
-  margin-bottom: 40px;
-}
-#footer .footer_info .center > ul li {
-  line-height: 20px;
+#footer .footer_info .center li {
+  line-height: 1.5;
 }
 #footer .footer_info .center .top_box, #footer .footer_info .center .bot_box {
   display: flex;
@@ -203,6 +267,21 @@ button {
 }
 #footer .footer_info .center .top_box a, #footer .footer_info .center .bot_box a {
   color: #fff;
+}
+#footer .footer_info .center .bot_box .links li a {
+  position: relative;
+}
+#footer .footer_info .center .bot_box .links li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5s;
+}
+#footer .footer_info .center .bot_box .links li a:hover::after {
+  width: 100%;
 }
 #footer .footer_info .center .sns {
   display: flex;
@@ -239,13 +318,14 @@ button {
   height: 100vh;
 }
 #login_page .center {
-  width: 950px;
+  width: 60%;
   display: flex;
   justify-content: space-between;
   box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
 }
 #login_page .center .left_box {
-  margin: auto 50px;
+  margin: auto 0;
+  width: 50%;
   text-align: center;
 }
 #login_page .center .left_box h2 {
@@ -285,11 +365,13 @@ button {
   margin-bottom: 35px;
 }
 #login_page .center .left_box .loginForm input {
-  width: 355px;
+  width: 80%;
   height: 40px;
   border-radius: 30px;
   box-shadow: 0px 0px 10px #888;
   padding: 5px 10px;
+}
+#login_page .center .left_box .loginForm .username {
   margin-bottom: 25px;
 }
 #login_page .center .left_box .loginForm .btns {
@@ -297,6 +379,7 @@ button {
   justify-content: space-between;
   width: 100%;
   box-shadow: none;
+  width: 85%;
 }
 #login_page .center .left_box .loginForm .btns button {
   width: 45%;
@@ -305,7 +388,6 @@ button {
   color: #fff;
   background-color: #002b31;
   display: block;
-  font-size: 20px;
   line-height: 50px;
   box-shadow: 0px 0px 10px #888;
 }
@@ -320,12 +402,23 @@ button {
   line-height: 50px;
   box-shadow: 0px 0px 10px #888;
 }
+#login_page .center .left_box .loginForm .idCheck, #login_page .center .left_box .loginForm .passCheck {
+  display: block;
+  width: 80%;
+  background-color: red;
+  margin: 5px auto;
+}
 #login_page .center .left_box a {
   color: #555;
   font-size: 13px;
 }
 #login_page .center .right_box {
   position: relative;
+  width: 50%;
+  margin: auto;
+}
+#login_page .center .right_box img {
+  width: 100%;
 }
 #login_page .center .right_box .text_box {
   position: absolute;
@@ -853,6 +946,9 @@ button {
 #main_page .welcome .center p {
   color: #F1A691;
 }
+#main_page .looking_for {
+  overflow: hidden;
+}
 #main_page .looking_for .center .context_boxs {
   display: flex;
   justify-content: space-between;
@@ -977,6 +1073,15 @@ button {
   margin: 15px 30px;
   cursor: pointer;
   font-size: 20px;
+  position: relative;
+}
+#main_page .facilities .center .facilitiesBtns li span {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #002b31;
+  transition: all 0.5s;
 }
 #main_page .facilities .center .boxs {
   width: 100%;
@@ -987,7 +1092,7 @@ button {
 #main_page .facilities .center .boxs .box {
   position: relative;
   width: 32%;
-  margin-bottom: 2%;
+  margin-bottom: 10px;
 }
 #main_page .facilities .center .boxs .box .img_box img {
   width: 100%;
@@ -1005,7 +1110,7 @@ button {
   color: #fff;
 }
 #main_page .facilities .center .boxs .big {
-  width: 64%;
+  width: 64.8%;
   overflow: hidden;
 }
 #main_page .facilities .center .boxs .big img {
@@ -1066,6 +1171,7 @@ button {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.5s;
+  cursor: pointer;
 }
 #main_page .news .center .boxs .btns .left {
   left: -100px;
@@ -1092,10 +1198,11 @@ button {
 }
 #main_page .news .center .boxs .view .box .img_box span {
   width: 100%;
-  height: 369.53px;
+  height: 100%;
   display: block;
   position: absolute;
   transition: all 0.5s;
+  cursor: pointer;
 }
 #main_page .news .center .boxs .view .box .img_box .date_box {
   margin: 30px;
@@ -1113,6 +1220,7 @@ button {
   width: 100%;
 }
 #main_page .news .center .boxs .view .box .text_box {
+  z-index: 10;
   background-color: #002b31;
   color: #fff;
   padding: 20px;
@@ -1178,6 +1286,12 @@ button {
   line-height: 44px;
   text-align: center;
   font-weight: bold;
+  transition: all 0.5s;
+}
+#main_page .contact_us .center .contact_box a:hover {
+  background-color: #002b31;
+  color: #fff;
+  border: 1px solid #fff;
 }
 
 @media (max-width: 1200px) {
@@ -1198,6 +1312,9 @@ button {
   }
   #main_page .looking_for .center .context_boxs .right_box .line i {
     font-size: 70px;
+  }
+  #login_page .center {
+    width: 70%;
   }
 }
 @media (max-width: 1000px) {
@@ -1297,11 +1414,15 @@ button {
     width: 83.333333%;
   }
   #login_page .center {
-    width: 500px;
-    padding: 60px 0;
+    width: 60%;
   }
   #login_page .center .right_box {
     display: none;
+  }
+  #login_page .center .left_box {
+    margin: 0 auto;
+    width: 100%;
+    padding: 50px 0;
   }
   #brd_list .center {
     width: 800px;
@@ -1380,6 +1501,9 @@ button {
   #main_page .count .center .right .count_one p, #main_page .count .center .left .count_one p {
     font-size: 20px;
   }
+  #main_page .news {
+    overflow: hidden;
+  }
   #main_page .news .center .boxs .view .box .img_box .date_box p {
     font-size: 30px;
     line-height: 200%;
@@ -1421,6 +1545,17 @@ button {
   #brd_insert .center form textarea {
     width: 100%;
     margin-top: 20px;
+  }
+  #login_page .center {
+    width: 60%;
+  }
+  #login_page .center .right_box {
+    display: none;
+  }
+  #login_page .center .left_box {
+    margin: 0 auto;
+    width: 100%;
+    padding: 50px 0;
   }
 }
 @media (max-width: 580px) {

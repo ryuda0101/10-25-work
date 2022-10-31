@@ -7,6 +7,7 @@ let iso = new Isotope(Wrap, {
 
 // 클릭시 해당 태그의 속성값 가져오기
 const isotopeBtns = document.querySelectorAll(".facilitiesBtns li");
+const isotopeBtnsOn = document.querySelectorAll(".facilitiesBtns li span");
 
 // 버튼 활성 / 비활성화 작업
 isotopeBtns.forEach(function(element,index){
@@ -18,7 +19,16 @@ isotopeBtns.forEach(function(element,index){
             iso.arrange({
                 filter:data,
                 // 속도 조절하는 옵션
-                transitionDuration: '1s'
+                transitionDuration: '1s',
+                masonry: {
+                    columnWidth: 10,
+                    gutter: 10
+                }
             });
+
+        isotopeBtnsOn.forEach(function(el,index){
+            el.style.width = 0;
         });
+        element.querySelector("span").style.width = "100%";
     });
+});

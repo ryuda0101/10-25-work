@@ -7,9 +7,6 @@ $center:80%;
     }
 }
 
-* {
-    font-family: 'Gilda Display', serif;
-}
 button {
     cursor:pointer;
 }
@@ -44,17 +41,67 @@ button {
                 display:flex;
                 li {
                     margin:0 15px;
+                    &:hover {
+                        a {
+                            &::after {
+                                width:100%;
+                            }
+                        }
+                    }
                     a {
-                        color:#002b31;
+                        color:#002b31; position:relative;
+                        &::after {
+                            content:""; display:block;
+                            width:0; height:1px; background-color:#aa8453;
+                            transition:all 0.5s;
+                        }
                     }
                 }
             }
         .ham_menu {
-            display:none;
+            display:none; cursor:pointer;
             span {display:block; width:25px; height:2px; background-color:#fff;}
             .first{transform:translateY(10px);}
             .last{transform:translateY(-10px);}
         }
+        }
+    }
+    .ham_gnb {
+        background-color:#fff; transition:all 0.5s;
+        position:fixed; top:0; right:0;
+        width:0; height:100vh; overflow:hidden;
+        display:flex; align-items:center; justify-content:center;
+        .close_btn {
+            position:absolute; top:30px; right:30px;
+            span {display:block; width:25px; height:1px; background-color:#000; cursor:pointer;}
+            .first {
+                transform:rotate(45deg) translateX(1px);
+            }
+            .last {
+                transform:rotate(-45deg) translateX(0px);
+            }
+        }
+        .gnb {
+            display:flex; flex-direction:column; justify-content:space-around; height:65%;
+            li {
+                > a {
+                    font-size:15px; width:100%;
+                    font-family: 'Noto Serif Display', serif;
+                    font-weight:300;
+                    color:#000;
+                    position:relative;
+                    &::after {
+                        content:""; display:block; position:absolute;
+                        width:0; height:1px; background-color:#aa8453;
+                        transition:all 0.5s; margin-top:2px;
+                    }
+                    &:hover {
+                        &::after {
+                            width:100%;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -109,31 +156,43 @@ button {
         .center {
             width:$center;
             display:flex; justify-content:space-between;
-            >div {
-                h3 {
-                    font-size:25px;
-                    margin-bottom:40px;
-                }
-                .line {
-                    line-height:20px; margin-bottom:25px;
-                }
+            h3 {
+                font-size:25px;
+                margin-bottom:40px;
             }
-            >ul {
-                h3 {
-                    font-size:25px;
-                    margin-bottom:40px;
-                }
-                li {
-                    line-height:20px;
-                }
+
+            .line {
+                line-height:20px; margin-bottom:25px;
             }
+
+            li {
+                line-height:1.5;
+            }
+
             .top_box,.bot_box {
                 display:flex; justify-content:space-around; width:50%;
                 a {
                     color:#fff;
                 }
             }
-            
+            .bot_box {
+                .links {
+                    li {
+                        a {
+                            position:relative;
+                            &::after {
+                                content:""; display:block; position:absolute;
+                                width:0; height:1px; background-color:rgba(255,255,255,0.5);
+                                transition:all 0.5s;
+                            }
+                            &:hover {
+                                &::after {width:100%;}
+                            }
+                        }
+                    }
+                }
+            }
+
             .sns {
                 display:flex; justify-content:space-between;
                 > li {
@@ -165,12 +224,12 @@ button {
     display:flex; justify-content:center; align-items:center;
     height:100vh;
     .center {
-        // width:49.479166%;
-        width:950px; 
+        width:60%; 
         display:flex; justify-content:space-between;
         box-shadow:0 0 10px rgba(100,100,100,0.5);
         .left_box {
-            margin:auto 50px;
+            margin:auto 0;
+            width:50%;
             text-align:center; 
             h2 {
                 font-weight:normal;
@@ -198,18 +257,20 @@ button {
             .loginForm {
                 margin-bottom:35px;
                 input {
-                    width:355px; height:40px; border-radius:30px;
+                    width:80%; height:40px; border-radius:30px;
                     box-shadow:0px 0px 10px #888;
                     padding:5px 10px;
+                }
+                .username {
                     margin-bottom:25px;
                 }
                 .btns {
                     display:flex; justify-content:space-between;
-                    width:100%; box-shadow:none;
+                    width:100%; box-shadow:none; width:85%;
                     button {
                         width:45%; height:50px; border-radius:30px;
                         color:#fff; background-color:#002b31;
-                        display:block; font-size:20px; line-height:50px;
+                        display:block; line-height:50px;
                         box-shadow:0px 0px 10px #888;
                     }
                     .button {
@@ -219,6 +280,11 @@ button {
                         line-height:50px; box-shadow:0px 0px 10px #888;
                     }
                 }
+                .idCheck, .passCheck {
+                    display:block;
+                    width:80%; background-color:red; margin:5px auto;
+                }
+                .passCheck {}
             }
             a {
                 color:#555; font-size:13px;
@@ -226,6 +292,10 @@ button {
         }
         .right_box {
             position:relative;
+            width:50%; margin:auto;
+            img {
+                width:100%;
+            }
             .text_box {
                 position:absolute;
                 top:50%; left:50%;
@@ -680,6 +750,7 @@ button {
         }
     }
     .looking_for {
+        overflow:hidden;
         .center {
             h2 {}
             .context_boxs {
@@ -789,6 +860,12 @@ button {
                     margin:15px 30px;
                     cursor:pointer;
                     font-size:20px;
+                    position:relative;
+                    span {
+                        position:absolute; display:block;
+                        width:0; height:1px; background-color:#002b31;
+                        transition:all 0.5s;
+                    }
                 }
             }
             .boxs {
@@ -798,7 +875,7 @@ button {
                 // isotope 문제로 position 꺼놨음
                 // position:absolute;
                 .box {
-                    position:relative; width:32%; margin-bottom:2%;
+                    position:relative; width:32%; margin-bottom:10px;
                     .img_box {
                         img {width:100%;}
                     }
@@ -813,7 +890,7 @@ button {
                     }
                 }
                 .big {
-                    width:64%; overflow:hidden;
+                    width:64.8%; overflow:hidden;
                     img {width:100%;}
                 }
             }
@@ -867,6 +944,7 @@ button {
                     i {
                         position:absolute; font-size:100px; color:#002b31; z-index:99;
                         top:50%; transform:translateY(-50%); transition:all 0.5s;
+                        cursor:pointer;
                     }
                     .left {
                         left:-100px;
@@ -891,8 +969,8 @@ button {
                         .img_box {
                             position:relative;
                             span {
-                                width:100%; height:369.53px; display:block; position:absolute;
-                                transition:all 0.5s;
+                                width:100%; height:100%; display:block; position:absolute;
+                                transition:all 0.5s; cursor:pointer;
                             }
                             .date_box {
                                 margin:30px;
@@ -909,6 +987,7 @@ button {
                             }
                         }
                         .text_box {
+                            z-index:10;
                             background-color:#002b31; color:#fff; padding:20px; box-sizing:border-box;
                             h3 {
                                 font-size:25px; margin-bottom:5px;
@@ -965,7 +1044,10 @@ button {
                     color:#002b31; border:1px solid #002b31;
                     margin-bottom:60px;
                     line-height:44px; text-align:center;
-                    font-weight:bold;
+                    font-weight:bold; transition:all 0.5s;
+                    &:hover {
+                        background-color:#002b31; color:#fff; border:1px solid #fff;
+                    }
                 }
             }
         }
@@ -977,7 +1059,6 @@ button {
 
 
 // 반응형 작업 시작
-
 @media (max-width:1200px) {
     // 서브페이지 반응형 작업 시작
     #about_us {
@@ -1024,7 +1105,15 @@ button {
             }
         }
     }
+
+    // 로그인, 회원가입 페이지
+    #login_page {
+        .center {
+            width:70%;
+        }
+    }
 }
+
 
 @media (max-width:1000px) {
     // 헤더 작업
@@ -1187,9 +1276,14 @@ button {
     // 로그인, 회원가입 페이지
     #login_page {
         .center {
-            width:500px; padding:60px 0;
+            width:60%;
             .right_box {
                 display:none;
+            }
+            .left_box {
+                margin:0 auto;
+                width:100%;
+                padding:50px 0;
             }
         }
     }
@@ -1304,6 +1398,7 @@ button {
             }
         }
         .news {
+            overflow:hidden;
             .center {
                 .boxs {
                     .view {
@@ -1369,6 +1464,21 @@ button {
                 textarea {
                     width:100%; margin-top:20px;
                 }
+            }
+        }
+    }
+
+    // 로그인, 회원가입 페이지
+    #login_page {
+        .center {
+            width:60%;
+            .right_box {
+                display:none;
+            }
+            .left_box {
+                margin:0 auto;
+                width:100%;
+                padding:50px 0;
             }
         }
     }
