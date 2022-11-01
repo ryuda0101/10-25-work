@@ -96,22 +96,40 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 // 게시글 작성시 post로 db에 데이터 올리기
-app.post("/add",upload.single('fileUpload'),function(req,res){
+app.post("/add",upload.single('file'),function(req,res){
     db.collection("count").findOne({name:"게시글"},function(err,result){
-        db.collection("board").insertOne({
-            brd_id:result.totalBoard + 1,
-            brd_name:req.user.joinnick,
-            brd_email:req.body.email,
-            brd_title:req.body.title,
-            brd_number:req.body.number,
-            brd_context:req.body.message,
-            brd_date:moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:ss"),
-            fileName:req.file.originalname
-        },function(err,result){
-            db.collection("count").updateOne({name:"게시글"},{$inc:{totalBoard:1}},function(err,result){
-                res.redirect("/brdlist")
+        if(req.file == undefined){
+            db.collection("board").insertOne({
+                brd_id:result.totalBoard + 1,
+                brd_name:req.user.joinnick,
+                brd_email:req.body.email,
+                brd_title:req.body.title,
+                brd_number:req.body.number,
+                brd_context:req.body.message,
+                brd_date:moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:ss"),
+                fileName:null
+            },function(err,result){
+                db.collection("count").updateOne({name:"게시글"},{$inc:{totalBoard:1}},function(err,result){
+                    res.redirect("/brdlist")
+                })
             })
-        })
+        }
+        else {
+            db.collection("board").insertOne({
+                brd_id:result.totalBoard + 1,
+                brd_name:req.user.joinnick,
+                brd_email:req.body.email,
+                brd_title:req.body.title,
+                brd_number:req.body.number,
+                brd_context:req.body.message,
+                brd_date:moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:ss"),
+                fileName:req.file.originalname
+            },function(err,result){
+                db.collection("count").updateOne({name:"게시글"},{$inc:{totalBoard:1}},function(err,result){
+                    res.redirect("/brdlist")
+                })
+            })
+        }
     });
 });
 
@@ -123,19 +141,19 @@ app.get("/edit/:no",function(req,res){
 })
 // 게시글 수정 후 db에 데이터 새로 업데이트
 app.post("/update",upload.single('file'),function(req,res){
-    // if(req.body.file == null){
-    //     db.collection("board").updateOne({brd_id:Number(req.body.hidden)},{$set:{
-    //         brd_name:req.user.joinnick,
-    //         brd_email:req.body.email,
-    //         brd_title:req.body.title,
-    //         brd_number:req.body.number,
-    //         brd_context:req.body.message,
-    //         fileName:null
-    //     }},function(err,result){
-    //         res.redirect("/detail/" + Number(req.body.hidden));
-    //     });
-    // }
-    // else{
+    if(req.file == undefined){
+        db.collection("board").updateOne({brd_id:Number(req.body.hidden)},{$set:{
+            brd_name:req.user.joinnick,
+            brd_email:req.body.email,
+            brd_title:req.body.title,
+            brd_number:req.body.number,
+            brd_context:req.body.message,
+            fileName:null
+        }},function(err,result){
+            res.redirect("/detail/" + Number(req.body.hidden));
+        });
+    }
+    else {
         db.collection("board").updateOne({brd_id:Number(req.body.hidden)},{$set:{
             brd_name:req.user.joinnick,
             brd_email:req.body.email,
@@ -146,7 +164,7 @@ app.post("/update",upload.single('file'),function(req,res){
         }},function(err,result){
             res.redirect("/detail/" + Number(req.body.hidden));
         });
-    // }
+    }
 });
 
 // 게시글 상세 페이지
@@ -208,6 +226,26 @@ app.post("/addcomment",function(req,res){
     });
 });
 
+// 댓글 삭제 요청
+app.get ("/deletecomment/:no",function(req,res){
+    db.collection("comment").findOne({comNo:Number(req.params.no)},function(err,result1){
+        db.collection("comment").deleteOne({comNo:Number(req.params.no)},function(err,result2){
+            res.redirect("/detail/"+ result1.comPrd);
+        })
+    });
+});
+
+// 댓글 수정 요청
+app.post("/updatecomment",function(req,res){
+    db.collection("comment").findOne({comNo:Number(req.body.comNo)},function(err,result1){
+        db.collection("comment").updateOne({comNo:Number(req.body.comNo)},{$set:{
+            comContext:req.body.comContext
+        }},function(err,result2){
+            res.redirect("/detail/"+ result1.comPrd);
+        })
+    });
+});
+
 // 서브페이지01
 app.get("/about_us",function(req,res){
     res.render("sub_page1",{userData:req.user});
@@ -238,7 +276,7 @@ app.post("/userJoin",function(req,res){
                     joinpass:req.body.userpass
                 },function(err,result){
                     db.collection("count").updateOne({name:"회원정보"},{$inc:{userCount:1}},function(err,result){
-                        res.send ("<script> alert('회원가입을 축하드립니다.'); location.href = '/' </script>")
+                        res.send ("<script> alert('회원가입을 축하드립니다.'); location.href = '/login' </script>")
                     })
                 });
             });
