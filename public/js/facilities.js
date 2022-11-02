@@ -2,33 +2,39 @@
 let Wrap = document.querySelector(".facilities .boxs");
 let iso = new Isotope(Wrap, {
     itemSelector:".box",
-    layoutMode: 'masonry'
+    percentPosition: true,
+    layoutMode: 'masonry',
+    masonry: {
+        columnWidth: 10,
+        gutter: 10
+    }
 });
 
-// 클릭시 해당 태그의 속성값 가져오기
-const isotopeBtns = document.querySelectorAll(".facilitiesBtns li");
-const isotopeBtnsOn = document.querySelectorAll(".facilitiesBtns li span");
-
-// 버튼 활성 / 비활성화 작업
-isotopeBtns.forEach(function(element,index){
-    element.addEventListener("click",function(){
-    // 메뉴클릭시 속성값 가져오기
-    // getAttribute → 속성값 가져오는 명령어
-    let data = element.getAttribute("data-facilities")
-        // 클릭시 가지고온 속성값에 해당하는 태그들만 재배치
+imagesLoaded( Wrap ).on( 'progress', function() {
+    // layout Isotope after each image loads
+    iso.layout();
+    const isotopeBtns = document.querySelectorAll(".facilitiesBtns li");
+    const isotopeBtnsSpan = document.querySelectorAll(".facilitiesBtns li span");
+    
+    // 버튼 활성 / 비활성화 작업
+    isotopeBtns.forEach(function(element,index){
+        element.addEventListener("click",function(){
+            // 메뉴클릭시 속성값 가져오기
+            // getAttribute → 속성값 가져오는 명령어
+             let data = element.getAttribute("data-facilities")
+            // 클릭시 가지고온 속성값에 해당하는 태그들만 재배치
             iso.arrange({
                 filter:data,
                 // 속도 조절하는 옵션
-                transitionDuration: '1s',
-                masonry: {
-                    columnWidth: 10,
-                    gutter: 10
-                }
+                transitionDuration: '1s'
             });
 
-        isotopeBtnsOn.forEach(function(el,index){
-            el.style.width = 0;
+            isotopeBtns.forEach((item,index)=>{
+                item.classList.remove("on");
+            })
+            element.classList.add("on");
         });
-        element.querySelector("span").style.width = "100%";
     });
 });
+
+// 클릭시 해당 태그의 속성값 가져오기

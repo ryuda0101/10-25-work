@@ -13,9 +13,6 @@ const news_hamGnb = document.querySelector("#header .ham_gnb .news_gnb")
 
 
 // 함수 호출및 클릭시 이벤트 걸어주기
-rooms_gnb.addEventListener("click",function(event){
-    roomWork();
-});
 rooms_hamGnb.addEventListener("click",function(event){
     roomWork();
 });

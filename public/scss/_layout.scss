@@ -39,16 +39,23 @@ button {
             display:flex; justify-content:space-between; align-items:center;
             .gnb {
                 display:flex;
-                li {
+                .rooms {
+                    &:hover {
+                        .room_gnb {
+                            height:170px
+                        }
+                    } 
+                }
+                > li {
                     margin:0 15px;
                     &:hover {
-                        a {
+                        > a {
                             &::after {
                                 width:100%;
                             }
                         }
                     }
-                    a {
+                    > a {
                         color:#002b31; position:relative;
                         &::after {
                             content:""; display:block;
@@ -56,6 +63,33 @@ button {
                             transition:all 0.5s;
                         }
                     }
+
+                    .room_gnb {
+                        position:absolute; height:0; top:110px;
+                        z-index:99; background-color:#fff;
+                        overflow:hidden; transition:all 0.5s;
+                        padding:0 20px;
+                        li {
+                            line-height:2;
+                            &:hover {
+                                a {
+                                    &::after {
+                                        width:100%;
+                                    }
+                                }
+                            }
+                            a {
+                                position:relative;
+                                &::after {
+                                    content:""; display:block;
+                                    width:0; height:1px; background-color:#aa8453;
+                                    transition:all 0.5s;
+                                    position:absolute;
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
         .ham_menu {
@@ -83,7 +117,7 @@ button {
         }
         .gnb {
             display:flex; flex-direction:column; justify-content:space-around; height:65%;
-            li {
+            > li {
                 > a {
                     font-size:15px; width:100%;
                     font-family: 'Noto Serif Display', serif;
@@ -101,6 +135,13 @@ button {
                         }
                     }
                 }
+
+                ul {
+                    li {
+                        a {}
+                    }
+                }
+
             }
         }
     }
@@ -171,8 +212,8 @@ button {
 
             .top_box,.bot_box {
                 display:flex; justify-content:space-around; width:50%;
-                a {
-                    color:#fff;
+                a,li,p {
+                    color:#ddd;
                 }
             }
             .bot_box {
@@ -213,7 +254,7 @@ button {
         background-color:#132326;
         padding:45px 0;
         .center {
-            text-align:center; color:#fff;
+            text-align:center; color:#ddd;
         }
     }
 }
@@ -378,7 +419,7 @@ button {
                 width:237px; height:40px; border-radius:3px;
             }
             button {
-                width:48px; height:40px; border-radius:3px; background-color:#adb5bd; color:#fff;
+                width:48px; height:40px; border-radius:3px; background-color:#002b31; color:#fff;
             }
         }
     }
@@ -551,7 +592,7 @@ button {
         .center {
             width:$center;
             h3 {
-                font-size:45px; color:#000;
+                font-size:45px; color:#002b31;
                 margin-bottom:80px;
                 &::after {
                     content:""; display:block; margin-top:15px;
@@ -599,9 +640,15 @@ button {
                 display:flex; justify-content:space-between; margin-bottom:40px;
                 .box {
                     width:32.333333%; box-shadow:0 0 10px rgba(100,100,100,0.5);
+                    &:hover {
+                        .img_box {
+                            img {transform:scale(1.2);}
+                        }
+                    }
                     .img_box {
+                        overflow:hidden;
                         img {
-                            width:100%;
+                            width:100%; transition:all 0.5s;
                         }
                     }
                     .text_box {
@@ -622,7 +669,7 @@ button {
         .center {
             overflow:hidden;
             h3 {color:#fff;}
-            p {color:#fff;}
+            p {color:#ddd;}
             .customers {
                 display:flex; width:300%;
                 position:relative;
@@ -698,10 +745,115 @@ button {
                             display:flex; justify-content:center;
                             li {
                                 margin:0 10px;
-                                a {}
+                                a {
+                                    width:45px; height:45px; background-color:#fff;
+                                    display:block; line-height:45px; text-align:center;
+                                    transition:all 0.5s; border-radius:3px;
+                                    &:hover {
+                                        background-color:#002b31; color:#fff;
+                                    }
+                                }
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+// 서브페이지02 / rooms
+#slideWrap {
+    width:100%; height:100vh; overflow:hidden;
+    position:relative;
+    .view {
+        width:500%; display:flex; transition:all 0.5s;
+        &:hover {
+            .point_btns {
+                .left {
+                    left:10px;
+                }
+                .right {
+                    right:10px;
+                }
+            }
+        }
+        .point_btns {
+            position:absolute; bottom:50px; left:50%; transform:translateX(-50%);
+            display:flex; justify-content:space-between; width:100%; height:100%;
+            i {
+                position:absolute; font-size:100px; color:#002b31; z-index:99;
+                top:50%; transform:translateY(-50%); transition:all 0.5s;
+                cursor:pointer;
+            }
+            .left {
+                left:-100px;
+            }
+            .right {
+                right:-100px;
+            }
+        }
+        .circle_btns {
+            position:absolute; bottom:50px; left:50%; transform:translateX(-50%);
+            span {
+                display:inline-block; border-radius:50%;
+                width:20px; height:20px;
+                margin:0 10px; cursor:pointer;
+                background-color:#002b31; opacity:0.8;
+            }
+            .on {
+                background-color:#fff;
+            }
+        }
+        .box {
+            width:25%; height:100vh;
+            img {width:100%;}
+        }
+    }
+}
+#rooms {
+    padding:100px 0;
+    .room {
+        display:flex; justify-content:center;
+        .center {
+            width:1200px; display:flex; justify-content:space-between;
+            h2 {
+                font-size:45px; color:#002b31; margin-bottom:80px;
+                &::after {
+                    content:""; display:block; margin-top:15px;
+                    width:180px; height:1px; background-color:#8e6d45;
+                }
+            }
+            h3 {
+                font-size:30px; color:#222; margin-bottom:40px;
+            }
+            p {
+                color:#555; line-height:1.5; margin-bottom:25px;
+            }
+            .right {
+                width:20%;
+                .amenity {
+                    display:flex; flex-direction:column; margin-top:140px;
+                    .box {
+                        display:flex; margin-bottom:50px; justify-content:space-around; align-items:center;
+                        i {font-size:40px; color:#002b31;}
+                        p {margin-bottom:0;}
+                    }
+                }
+            }
+            .left {
+                width:70%;
+                > div {
+                    margin-bottom:100px;
+                }
+                a {
+                    display:block;
+                    width:168px; height:44px; line-height:44px; text-align:center;
+                    color:#132326; border:1px solid #002b31;
+                    font-weight:bold; transition:all 0.5s;
+                        &:hover {
+                            background-color:#002b31; color:#fff;
+                        }
                 }
             }
         }
@@ -826,6 +978,7 @@ button {
                             width:60px; height:1px; background-color:#fff;
                             margin:20px 0; transition:all 0.5s;
                         }
+                        a {color:#fff;}
                         .hide {
                             display:flex; justify-content:space-between;
                             .include {
@@ -834,7 +987,7 @@ button {
                             a {
                                 color:#fff;
                                 i {
-                                    margin:0 5px;
+                                    margin:0 5px; color:#ddd;
                                 }
                             }
                         }
@@ -855,10 +1008,17 @@ button {
                     cursor:pointer;
                     font-size:20px;
                     position:relative;
+                    color:#aaa;
                     span {
                         position:absolute; display:block;
                         width:0; height:1px; background-color:#002b31;
                         transition:all 0.5s;
+                    }
+                }
+                li.on {
+                    color:#132326;
+                    span {
+                        width:100%;
                     }
                 }
             }
@@ -866,12 +1026,18 @@ button {
                 width:100%;
                 display:flex; justify-content:space-between;
                 flex-wrap:wrap;
-                // isotope 문제로 position 꺼놨음
-                // position:absolute;
                 .box {
                     position:relative; width:32%; margin-bottom:10px;
+                    &:hover {
+                        .img_box {
+                            img {
+                                transform:scale(1.2);
+                            }
+                        }
+                    }
                     .img_box {
-                        img {width:100%;}
+                        max-width:100%; overflow:hidden;
+                        img {width:100%; height:auto; transition:all 0.5s;}
                     }
                     .text_box {
                         position:absolute; bottom:0; left:0; padding:15px;
@@ -881,6 +1047,11 @@ button {
                         a {
                             color:#fff;
                         }
+                    }
+                }
+                .dark {
+                    .text_box {
+                        h3,a {color:#000;}
                     }
                 }
                 .big {
@@ -912,7 +1083,7 @@ button {
                     span {
                         font-size:30px;
                     }
-                    p {}
+                    p {color:#ddd;}
                 }
             }
         }
@@ -987,7 +1158,7 @@ button {
                                 font-size:25px; margin-bottom:5px;
                             }
                             p {
-                                font-size:12px;
+                                font-size:12px; color:#ddd;
                             }
                         }
                     }
@@ -1014,8 +1185,10 @@ button {
     }
 
     .contact_us {
+        // background-image:url(/img/1.jpg);
+        // background-attachment:fixed;
+        // background-size:cover; background-repeat:no-repeat;
         .center {
-            h2 {}
             p {
                 margin-bottom:40px;
             }
@@ -1413,7 +1586,10 @@ button {
             background-color:#002b31;
             .gift_bg {
                 display:none;
-                p {color:#fff;}
+            }
+            .center {
+                h2 {color:#fff;}
+                p {color:#bbb;}
             }
         }
         .contact_us {

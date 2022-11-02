@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+        <!-- 아이콘 관련 링크 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+        <!-- 폰트 관련 링크 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+    
+        <!-- 폰트 관련 링크 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+    <%- include("common/rooms_banner.ejs") %>
+    <div id="rooms">
+        <div class="room">
+            <div class="center">
+                <div class="left">
+                    <h2>Superior Room</h2>
+                    <div class="decor">
+                        <h3>Décor</h3>
+                        <p>Fusce a tempus justo. Sed quis elit non dui dapibus accumsan et quis ante. Phasellus volutpat mattis nunc eget imperdiet. Nunc pellentesque tincidunt massa, sit amet condimentum nulla mattis id. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In volutpat placerat elit, ultrices dignissim enim aliquet sit amet. Ut bibendum nibh at magna venenatis, eget pharetra justo tincidunt. Phasellus nec mauris quis sem fermentum molestie.</p>
+                        <p>Proin rhoncus nulla erat, nec interdum purus tempus a. Nunc orci nibh, mattis eget magna non, convallis sodales nisi. Suspendisse egestas vel justo eget pulvinar. Phasellus ullamcorper nisl ipsum, ut sollicitudin libero tincidunt et. Sed pellentesque ex ut neque sagittis aliquam. Pellentesque vel est eget libero tristique molestie sed non diam. Sed ac blandit odio, sit amet gravida magna. Suspendisse potenti. Fusce eu semper ex, id dapibus ligula. Maecenas accumsan tellus purus, id scelerisque lacus mattis nec. Vestibulum vitae pharetra urna.</p>
+                    </div>
+                    <div class="view">
+                        <h3>The view</h3>
+                        <p>Duis et metus nec urna fermentum tempor et a lacus. Integer pretium turpis mattis turpis convallis varius. Donec lectus turpis, tristique tristique mollis in, ullamcorper in ex. Nulla in ipsum et est pulvinar luctus a eu sem. Etiam non arcu eros. Suspendisse vel pretium velit, ac tincidunt purus. Curabitur dui eros, maximus nec lorem non, tincidunt iaculis lorem. Mauris eleifend imperdiet vehicula. Suspendisse sed tincidunt odio. Maecenas tempor efficitur facilisis.</p>
+                    </div>
+                    <div class="children">
+                        <h3>Children and extra beds</h3>
+                        <p>Praesent ut lacus ac magna convallis auctor ac non orci. Sed porttitor odio sit amet tellus pretium pellentesque sed sit amet felis. Aenean non aliquet lectus. Sed congue dictum arcu in bibendum. Praesent consectetur arcu quis hendrerit interdum. Nunc varius finibus nibh. Integer vulputate mi quam, ac iaculis lorem euismod at.</p>
+                    </div>
+                    <a href="#">CHECK NOW</a>
+                </div>
+
+                <div class="right">
+                    <div class="amenity">
+                        <h3>Amenity</h3>
+                        <div class="box">
+                            <i class="fa-solid fa-bed"></i>
+                            <p>Twin Bed</p>
+                        </div>
+                        <div class="box">
+                            <i class="fa-solid fa-bath"></i>
+                            <p>Bathtub</p>
+                        </div>
+                        <div class="box">
+                            <i class="fa-solid fa-tree-city"></i>
+                            <p>City View</p>
+                        </div>
+                        <div class="box">
+                            <i class="fa-solid fa-users"></i>
+                            <p>1-2 Persons</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("common/footer.ejs") %>
+</body>
+</html>
