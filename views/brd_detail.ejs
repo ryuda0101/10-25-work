@@ -49,18 +49,18 @@
                     <th class="date left_th">작성일자</th>
                     <th class="date right_th"><%- brdinfo.brd_date %></th>
                 </tr>
+                <% if(brdinfo.fileName){ %>
                 <tr class="brd_line">
                     <th class="date left_th">첨부파일</th>
                     <th class="date right_th">
-                    <% if(brdinfo.fileName){ %>
                         <a href="/files/<%- brdinfo.fileName %>" download><%- brdinfo.fileName %>다운로드</a>
-                    <% } %>
                     </th>
                 </tr>
-                <tr class="brd_context">
-                    <th class="context"><%- brdinfo.brd_context %></th>
-                </tr>
-            </table>            
+                <% } %>
+            </table> 
+            <div class="brd_context">
+                <%- brdinfo.brd_context %>
+            </div>           
             <!-- 수정, 삭제, 목록 버튼들 -->
             <div class="detail_btns">
                 <a class="listBtn" href="/brdlist">목록보기</a>
