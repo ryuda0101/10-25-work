@@ -69,6 +69,7 @@
                 </div>
                 <div class="line">
                     <input type="file" name="file" class="file">
+                    <input type="hidden" name="originFile" value="<%- brdinfo.fileName %>">
                 </div>
                 <textarea name="message" placeholder="Write message"><%- brdinfo.brd_context %></textarea>
                 <button type="submit">SEND MESSAGE</button>

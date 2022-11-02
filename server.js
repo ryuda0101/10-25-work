@@ -97,39 +97,30 @@ const upload = multer({ storage: storage })
 
 // 게시글 작성시 post로 db에 데이터 올리기
 app.post("/add",upload.single('file'),function(req,res){
+
+    if(req.file){
+        fileUpload = req.file.originalname;
+    }
+    else{
+        fileUpload = null;
+    }
+
+
     db.collection("count").findOne({name:"게시글"},function(err,result){
-        if(req.file == undefined){
-            db.collection("board").insertOne({
-                brd_id:result.totalBoard + 1,
-                brd_name:req.user.joinnick,
-                brd_email:req.body.email,
-                brd_title:req.body.title,
-                brd_number:req.body.number,
-                brd_context:req.body.message,
-                brd_date:moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:ss"),
-                fileName:null
-            },function(err,result){
-                db.collection("count").updateOne({name:"게시글"},{$inc:{totalBoard:1}},function(err,result){
-                    res.redirect("/brdlist")
-                })
-            })
-        }
-        else {
-            db.collection("board").insertOne({
-                brd_id:result.totalBoard + 1,
-                brd_name:req.user.joinnick,
-                brd_email:req.body.email,
-                brd_title:req.body.title,
-                brd_number:req.body.number,
-                brd_context:req.body.message,
-                brd_date:moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:ss"),
-                fileName:req.file.originalname
-            },function(err,result){
-                db.collection("count").updateOne({name:"게시글"},{$inc:{totalBoard:1}},function(err,result){
-                    res.redirect("/brdlist")
-                })
-            })
-        }
+        db.collection("board").insertOne({
+            brd_id:result.totalBoard + 1,
+            brd_name:req.user.joinnick,
+            brd_email:req.body.email,
+            brd_title:req.body.title,
+            brd_number:req.body.number,
+            brd_context:req.body.message,
+            brd_date:moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:ss"),
+            fileName:fileUpload
+        },function(err,result){
+            db.collection("count").updateOne({name:"게시글"},{$inc:{totalBoard:1}},function(err,result){
+                res.redirect("/brdlist")
+            });
+        });
     });
 });
 
@@ -141,30 +132,26 @@ app.get("/edit/:no",function(req,res){
 })
 // 게시글 수정 후 db에 데이터 새로 업데이트
 app.post("/update",upload.single('file'),function(req,res){
-    if(req.file == undefined){
-        db.collection("board").updateOne({brd_id:Number(req.body.hidden)},{$set:{
-            brd_name:req.user.joinnick,
-            brd_email:req.body.email,
-            brd_title:req.body.title,
-            brd_number:req.body.number,
-            brd_context:req.body.message,
-            fileName:null
-        }},function(err,result){
-            res.redirect("/detail/" + Number(req.body.hidden));
-        });
+    
+    if(req.file){
+        fileUpload = req.file.originalname;
     }
-    else {
-        db.collection("board").updateOne({brd_id:Number(req.body.hidden)},{$set:{
-            brd_name:req.user.joinnick,
-            brd_email:req.body.email,
-            brd_title:req.body.title,
-            brd_number:req.body.number,
-            brd_context:req.body.message,
-            fileName:req.file.originalname
-        }},function(err,result){
-            res.redirect("/detail/" + Number(req.body.hidden));
-        });
+    else{
+        fileUpload = req.body.originFile;
     }
+
+    db.collection("board").updateOne({brd_id:Number(req.body.hidden)},{$set:{
+        brd_name:req.user.joinnick,
+        brd_email:req.body.email,
+        brd_title:req.body.title,
+        brd_number:req.body.number,
+        brd_context:req.body.message,
+        fileName:fileUpload
+    }},function(err,result){
+        res.redirect("/detail/" + Number(req.body.hidden));
+    });
+
+    
 });
 
 // 게시글 상세 페이지
