@@ -24,7 +24,7 @@ window.addEventListener("scroll",function(){
     }
 });
 
-hamBtn.addEventListener("click",function(){hamGnb.style.width = "25%";});
+hamBtn.addEventListener("click",function(){hamGnb.style.width = "40%";});
 
 hamCloseBtn.addEventListener("click", () => hamGnb.style.width = 0);
 

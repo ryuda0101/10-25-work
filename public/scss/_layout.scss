@@ -1410,8 +1410,10 @@ button {
             } 
         }
         .gift {
+            background-color:#002b31;
             .gift_bg {
-                height:30%;
+                display:none;
+                p {color:#fff;}
             }
         }
         .contact_us {
@@ -1465,7 +1467,7 @@ button {
     // 로그인, 회원가입 페이지
     #login_page {
         .center {
-            width:60%;
+            width:60%; box-shadow:none;
             .right_box {
                 display:none;
             }
@@ -1473,6 +1475,11 @@ button {
                 margin:0 auto;
                 width:100%;
                 padding:50px 0;
+                .loginForm {
+                    .line {
+                        input {border:1px solid #aaa;}
+                    }
+                }
             }
         }
     }
