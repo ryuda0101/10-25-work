@@ -298,6 +298,21 @@ button {
 #footer .footer_info .center .top_box a, #footer .footer_info .center .top_box li, #footer .footer_info .center .top_box p, #footer .footer_info .center .bot_box a, #footer .footer_info .center .bot_box li, #footer .footer_info .center .bot_box p {
   color: #ddd;
 }
+#footer .footer_info .center .top_box .rooms li a {
+  position: relative;
+}
+#footer .footer_info .center .top_box .rooms li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5s;
+}
+#footer .footer_info .center .top_box .rooms li a:hover::after {
+  width: 100%;
+}
 #footer .footer_info .center .bot_box .links li a {
   position: relative;
 }
@@ -955,7 +970,6 @@ button {
 
 #slideWrap {
   width: 100%;
-  height: 100vh;
   overflow: hidden;
   position: relative;
 }
@@ -972,7 +986,7 @@ button {
 }
 #slideWrap .view .point_btns {
   position: absolute;
-  bottom: 50px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1017,7 +1031,6 @@ button {
 }
 #slideWrap .view .box {
   width: 25%;
-  height: 100vh;
 }
 #slideWrap .view .box img {
   width: 100%;
@@ -1031,7 +1044,7 @@ button {
   justify-content: center;
 }
 #rooms .room .center {
-  width: 1200px;
+  width: 80%;
   display: flex;
   justify-content: space-between;
 }
@@ -1060,11 +1073,17 @@ button {
 }
 #rooms .room .center .right {
   width: 20%;
+  margin-top: 140px;
 }
 #rooms .room .center .right .amenity {
   display: flex;
   flex-direction: column;
-  margin-top: 140px;
+}
+#rooms .room .center .right .amenity > div {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  flex-direction: column;
 }
 #rooms .room .center .right .amenity .box {
   display: flex;
@@ -1297,7 +1316,6 @@ button {
 }
 #main_page .facilities .center .boxs .box {
   position: relative;
-  width: 32%;
   margin-bottom: 10px;
 }
 #main_page .facilities .center .boxs .box:hover .img_box img {
@@ -1472,8 +1490,27 @@ button {
 #main_page .gift .center img {
   width: 100%;
 }
-#main_page .contact_us .center p {
-  margin-bottom: 40px;
+#main_page .contact_us .center .boxs {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 0;
+  width: 100%;
+}
+#main_page .contact_us .center .boxs > div {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+#main_page .contact_us .center .boxs .box {
+  text-align: center;
+  width: 25%;
+}
+#main_page .contact_us .center .boxs .box i {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+#main_page .contact_us .center .boxs .box p {
+  line-height: 1.5;
 }
 #main_page .contact_us .center .contact_box {
   display: flex;
@@ -1529,6 +1566,9 @@ button {
   #about_us .services .center .boxs .box .text_box {
     padding: 30px;
   }
+  #slideWrap .view .point_btns i {
+    font-size: 70px;
+  }
   #main_page > div .center {
     width: 80%;
   }
@@ -1570,6 +1610,28 @@ button {
   }
   #about_us .services .center .boxs .box .text_box {
     padding: 20px;
+  }
+  #slideWrap .view .point_btns i {
+    font-size: 50px;
+  }
+  #rooms .room .center {
+    display: block;
+  }
+  #rooms .room .center .left {
+    width: 100%;
+  }
+  #rooms .room .center .right {
+    width: 100%;
+  }
+  #rooms .room .center .right .amenity {
+    flex-direction: inherit;
+    justify-content: space-around;
+  }
+  #rooms .room .center .right .amenity > div {
+    flex-direction: inherit;
+  }
+  #rooms .room .center .right .amenity .box {
+    flex-direction: column;
   }
   #main_page .looking_for .center .context_boxs .left_box {
     display: none;
@@ -1632,6 +1694,15 @@ button {
   #main_page .news .center .boxs .view .box .text_box p {
     line-height: 1.5;
   }
+  #main_page .contact_us .center .boxs > div {
+    flex-direction: column;
+  }
+  #main_page .contact_us .center .boxs > div .box {
+    width: 100%;
+  }
+  #main_page .contact_us .center .boxs > div .bot_box {
+    margin-top: 50px;
+  }
   #main_page .contact_us .center .contact_box {
     width: 83.333333%;
   }
@@ -1680,6 +1751,25 @@ button {
   }
   #about_us .welcome .center .right_box img {
     width: 200px;
+  }
+  #rooms .room .center {
+    display: block;
+  }
+  #rooms .room .center .left {
+    width: 100%;
+  }
+  #rooms .room .center .right {
+    width: 100%;
+  }
+  #rooms .room .center .right .amenity {
+    flex-direction: inherit;
+    justify-content: space-around;
+  }
+  #rooms .room .center .right .amenity > div {
+    display: block;
+  }
+  #rooms .room .center .right .amenity .box {
+    flex-direction: column;
   }
   #main_page .rooms .center .boxs .box .img_box .wide {
     position: absolute;
@@ -1835,6 +1925,9 @@ button {
   #about_us .team_members .center .team_boxs .box {
     width: 100%;
     margin-bottom: 40px;
+  }
+  #slideWrap .view .point_btns i {
+    font-size: 50px;
   }
   #main_page .rooms .center .boxs .box {
     margin-top: 5%;

@@ -18,16 +18,50 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;500;600;700;800;900&display=swap" rel="stylesheet">
 
+        <!-- 스크롤시 등장효과 AOS -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+
         <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <%- include("common/header.ejs") %>
-    <%- include("common/rooms_banner.ejs") %>
+    <div id="slideWrap">
+        <div class="view">
+            <div class="point_btns">
+                <i class="fa-solid fa-angle-left left"></i>
+                <i class="fa-solid fa-angle-right right"></i>
+            </div>
+            <div class="circle_btns">
+                <span class="on"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="box">
+                <img src="/img/rooms_dl_slide01.png">
+            </div>
+            <div class="box">
+                <img src="/img/rooms_dl_slide02.png">
+            </div>
+            <div class="box">
+                <img src="/img/rooms_dl_slide03.png">
+            </div>
+            <div class="box">
+                <img src="/img/rooms_dl_slide04.png">
+            </div>
+            <div class="box">
+                <img src="/img/rooms_dl_slide05.png">
+            </div>
+        </div>
+    </div>
     <div id="rooms">
         <div class="room">
             <div class="center">
-                <div class="left">
-                    <h2>Family Room</h2>
+                <div class="left" data-aos="fade-right" data-aos-duration="1000">
+                    <h2 data-aos="fade-right" data-aos-duration="1000">Family Room</h2>
                     <div class="decor">
                         <h3>Décor</h3>
                         <p>Fusce a tempus justo. Sed quis elit non dui dapibus accumsan et quis ante. Phasellus volutpat mattis nunc eget imperdiet. Nunc pellentesque tincidunt massa, sit amet condimentum nulla mattis id. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In volutpat placerat elit, ultrices dignissim enim aliquet sit amet. Ut bibendum nibh at magna venenatis, eget pharetra justo tincidunt. Phasellus nec mauris quis sem fermentum molestie.</p>
@@ -44,24 +78,28 @@
                     <a href="#">CHECK NOW</a>
                 </div>
 
-                <div class="right">
+                <div class="right" data-aos="fade-left" data-aos-duration="1000">
+                    <h3>Amenity</h3>
                     <div class="amenity">
-                        <h3>Amenity</h3>
-                        <div class="box">
-                            <i class="fa-solid fa-bed"></i>
-                            <p>Twin Bed</p>
+                        <div class="top">
+                            <div class="box">
+                                <i class="fa-solid fa-bed"></i>
+                                <p>Twin Bed</p>
+                            </div>
+                            <div class="box">
+                                <i class="fa-solid fa-bath"></i>
+                                <p>Bathtub</p>
+                            </div>
                         </div>
-                        <div class="box">
-                            <i class="fa-solid fa-bath"></i>
-                            <p>Bathtub</p>
-                        </div>
-                        <div class="box">
-                            <i class="fa-solid fa-tree-city"></i>
-                            <p>City View</p>
-                        </div>
-                        <div class="box">
-                            <i class="fa-solid fa-users"></i>
-                            <p>1-2 Persons</p>
+                        <div class="bot">
+                            <div class="box">
+                                <i class="fa-solid fa-tree-city"></i>
+                                <p>City View</p>
+                            </div>
+                            <div class="box">
+                                <i class="fa-solid fa-users"></i>
+                                <p>1-2 Persons</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -69,5 +107,12 @@
         </div>
     </div>
     <%- include("common/footer.ejs") %>
+    
+    <!-- 상단 슬라이드 동작 -->
+    <script src="/js/rooms_banner.js"></script>
+
+    <!-- 스크롤시 등장효과 AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
 </body>
 </html>

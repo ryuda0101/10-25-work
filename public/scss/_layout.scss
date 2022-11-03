@@ -216,6 +216,23 @@ button {
                     color:#ddd;
                 }
             }
+            .top_box {
+                .rooms {
+                    li {
+                        a {
+                            position:relative;
+                            &::after {
+                                content:""; display:block; position:absolute;
+                                width:0; height:1px; background-color:rgba(255,255,255,0.5);
+                                transition:all 0.5s;
+                            }
+                            &:hover {
+                                &::after {width:100%;}
+                            }
+                        }
+                    }
+                }
+            }
             .bot_box {
                 .links {
                     li {
@@ -764,7 +781,7 @@ button {
 
 // 서브페이지02 / rooms
 #slideWrap {
-    width:100%; height:100vh; overflow:hidden;
+    width:100%; overflow:hidden;
     position:relative;
     .view {
         width:500%; display:flex; transition:all 0.5s;
@@ -779,7 +796,7 @@ button {
             }
         }
         .point_btns {
-            position:absolute; bottom:50px; left:50%; transform:translateX(-50%);
+            position:absolute; bottom:0; left:50%; transform:translateX(-50%);
             display:flex; justify-content:space-between; width:100%; height:100%;
             i {
                 position:absolute; font-size:100px; color:#002b31; z-index:99;
@@ -806,7 +823,7 @@ button {
             }
         }
         .box {
-            width:25%; height:100vh;
+            width:25%;
             img {width:100%;}
         }
     }
@@ -816,7 +833,7 @@ button {
     .room {
         display:flex; justify-content:center;
         .center {
-            width:1200px; display:flex; justify-content:space-between;
+            width:$center; display:flex; justify-content:space-between;
             h2 {
                 font-size:45px; color:#002b31; margin-bottom:80px;
                 &::after {
@@ -832,8 +849,12 @@ button {
             }
             .right {
                 width:20%;
+                margin-top:140px;
                 .amenity {
-                    display:flex; flex-direction:column; margin-top:140px;
+                    display:flex; flex-direction:column; 
+                    >div {
+                        display:flex; justify-content:space-around; width:50%; flex-direction:column;
+                    }
                     .box {
                         display:flex; margin-bottom:50px; justify-content:space-around; align-items:center;
                         i {font-size:40px; color:#002b31;}
@@ -1027,7 +1048,8 @@ button {
                 display:flex; justify-content:space-between;
                 flex-wrap:wrap;
                 .box {
-                    position:relative; width:32%; margin-bottom:10px;
+                    // width:32%;
+                    position:relative; margin-bottom:10px;
                     &:hover {
                         .img_box {
                             img {
@@ -1189,8 +1211,24 @@ button {
         // background-attachment:fixed;
         // background-size:cover; background-repeat:no-repeat;
         .center {
-            p {
-                margin-bottom:40px;
+            .boxs {
+                display:flex; justify-content:space-between;            
+                margin:100px 0; width:100%;
+                > div {
+                    display:flex;
+                    justify-content:space-around;
+                    width:100%;
+                }
+                .box {
+                    text-align:center; width:25%;
+                    i {
+                        font-size:30px;
+                        margin-bottom:30px;
+                    }
+                    p {
+                        line-height:1.5;
+                    }
+                }
             }
             .contact_box {
                 display:flex; flex-direction:column; align-items:center;
@@ -1251,6 +1289,14 @@ button {
                         }
                     }
                 }
+            }
+        }
+    }
+    // 서브페이지02 반응형 시작
+    #slideWrap {
+        .view {
+            .point_btns {
+                i {font-size:70px;}
             }
         }
     }
@@ -1323,7 +1369,7 @@ button {
         }
     }
 
-    // 서브페이지 반응형
+    // 서브페이지01 반응형
     #about_us {
         .welcome {
             .center {
@@ -1344,6 +1390,34 @@ button {
                     .box {
                         .text_box {
                             padding:20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 서브페이지02 반응형
+    #slideWrap {
+        .view {
+            .point_btns {
+                i {font-size:50px;}
+            }
+        }
+    }
+    #rooms {
+        .room {
+            .center {
+                display:block;
+                .left {
+                    width:100%;
+                }
+                .right {
+                    width:100%;
+                    .amenity {
+                        flex-direction:inherit; justify-content:space-around;
+                        > div {flex-direction:inherit;}
+                        .box {
+                            flex-direction:column;
                         }
                     }
                 }
@@ -1433,6 +1507,15 @@ button {
         }
         .contact_us {
             .center {
+                .boxs {
+                    > div {
+                        flex-direction:column;
+                        .box {
+                            width:100%;
+                        }
+                        .bot_box {margin-top:50px;}
+                    }
+                }
                 .contact_box {
                     width:83.333333%;
                 }
@@ -1510,6 +1593,30 @@ button {
                 .right_box {
                     img {width:200px;}
                     .img01 {
+                    }
+                }
+            }
+        }
+    }
+
+    // 서브페이지02 반응형
+    #rooms {
+        .room {
+            .center {
+                display:block;
+                .left {
+                    width:100%;
+                }
+                .right {
+                    width:100%;
+                    .amenity {
+                        flex-direction:inherit; justify-content:space-around;
+                        >div {
+                            display:block;
+                        }
+                        .box {
+                            flex-direction:column;
+                        }
                     }
                 }
             }
@@ -1722,6 +1829,14 @@ button {
                             width:100%; margin-bottom:40px;
                         }
                     }
+                }
+            }
+        }
+        // 서브페이지02 반응형
+        #slideWrap {
+            .view {
+                .point_btns {
+                    i {font-size:50px;}
                 }
             }
         }
