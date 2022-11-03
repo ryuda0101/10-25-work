@@ -1,6 +1,12 @@
 // cont3 카운트다운 작업 작업 시작
     // 변수 생성
-    let countStart = document.querySelector(".count").offsetTop;
+
+    let countStart;
+
+    window.addEventListener("load",function(){
+        countStart = document.querySelector(".count").offsetTop;
+    });
+
     let check = true;
 
     let list = [
@@ -32,7 +38,10 @@
     
     window.addEventListener("scroll",function(){
         let scTop = window.scrollY;
-        if (scTop >= countStart){
+        
+        const headHeight = document.querySelector("#header").offsetHeight;
+    
+        if (scTop >= countStart - headHeight){
             if (check == true){
                 // forEach 반복문으로 list변수에 있는 데이터 가져오기
                 list.forEach(function(el){

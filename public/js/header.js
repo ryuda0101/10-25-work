@@ -11,7 +11,7 @@ let hamGnbMenu = document.querySelectorAll("#header .ham_gnb li a");
 window.addEventListener("scroll",function(){
     let MainScTop = window.scrollY;
     if (MainScTop == 0){
-        bgColor.style.background = "none";
+        bgColor.style.background = "transparent";
         hamBtn.querySelectorAll("span").forEach(function(el,index){
             el.style.background = "#fff";
         });
