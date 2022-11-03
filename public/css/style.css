@@ -32,6 +32,7 @@ table {
 
 body {
   line-height: 1;
+  overflow-x: hidden;
 }
 
 button {
@@ -105,6 +106,8 @@ button {
 #header .bot_box .center .gnb > li > a {
   color: #002b31;
   position: relative;
+  font-weight: bold;
+  line-height: 2;
 }
 #header .bot_box .center .gnb > li > a::after {
   content: "";
@@ -122,7 +125,7 @@ button {
   background-color: #fff;
   overflow: hidden;
   transition: all 0.5s;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 #header .bot_box .center .gnb > li .room_gnb li {
   line-height: 2;
@@ -241,30 +244,69 @@ button {
 .main_banner {
   position: relative;
 }
+.main_banner .center #banner_h2 {
+  margin-bottom: 0;
+}
+.main_banner .center #banner_h2::after {
+  display: none;
+}
 .main_banner .center .check_box {
+  padding: 15px 100%;
+  border-radius: 15px;
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main_banner .center .check_box > div input {
+  height: 50px;
+  border: 1px solid #002b31;
+  margin-bottom: 5px;
+}
+.main_banner .center .check_box > div select {
+  width: 32.333333%;
+  height: 50px;
+  border: 1px solid #002b31;
+  margin-bottom: 5px;
+}
+.main_banner .center .check_box > div a {
+  width: 20%;
+  height: 50px;
+  display: inline-block;
+  background-color: #8e6d45;
+  color: #fff;
+  line-height: 50px;
+  margin: 0 auto;
+}
+.main_banner .center .check_box .date_line {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.main_banner .center .check_box .date_line .line {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+.main_banner .center .check_box .date_line .line input, .main_banner .center .check_box .date_line .line label {
+  width: 100%;
+}
+.main_banner .center .check_box .date_line .line label {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #132326;
+}
+.main_banner .center .check_box .select_line {
   width: 100%;
   display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 30px;
-  right: 50%;
-  transform: translateX(50%);
+  justify-content: space-between;
 }
-.main_banner .center .check_box input {
-  width: 15%;
-  height: 62px;
-}
-.main_banner .center .check_box select {
-  width: 15%;
-  height: 62px;
-}
-.main_banner .center .check_box a {
-  width: 15%;
-  height: 62px;
-  display: inline-block;
-  background-color: #aa8453;
-  color: #fff;
-  line-height: 62px;
+.main_banner .center .check_box .btn_line {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 #footer .footer_info {
@@ -925,9 +967,7 @@ button {
 #about_us .team_members .center .team_boxs .box .text_box .sns {
   display: flex;
   justify-content: center;
-}
-#about_us .team_members .center .team_boxs .box .text_box .sns li {
-  margin: 0 10px;
+  justify-content: space-around;
 }
 #about_us .team_members .center .team_boxs .box .text_box .sns li a {
   width: 45px;
@@ -953,6 +993,15 @@ button {
   display: flex;
   transition: all 0.5s;
 }
+#slideWrap .view .room_name {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 150px;
+  font-size: 125px;
+  color: #fff;
+  font-weight: 100;
+}
 #slideWrap .view:hover .point_btns .left {
   left: 10px;
 }
@@ -972,7 +1021,7 @@ button {
 #slideWrap .view .point_btns i {
   position: absolute;
   font-size: 100px;
-  color: #002b31;
+  color: #fff;
   z-index: 99;
   top: 50%;
   transform: translateY(-50%);
@@ -1123,6 +1172,7 @@ button {
   line-height: 30px;
 }
 #main_page .welcome {
+  padding: 50px 0 100px 0;
   background-color: #002b31;
   text-align: center;
 }
@@ -1541,6 +1591,9 @@ button {
   #about_us .services .center .boxs .box .text_box {
     padding: 30px;
   }
+  #slideWrap .view .room_name {
+    font-size: 100px;
+  }
   #slideWrap .view .point_btns i {
     font-size: 70px;
   }
@@ -1585,6 +1638,15 @@ button {
   }
   #about_us .services .center .boxs .box .text_box {
     padding: 20px;
+  }
+  #about_us .team_members .center .team_boxs .box .text_box .sns {
+    display: none;
+  }
+  #slideWrap .view .room_name {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
   }
   #slideWrap .view .point_btns i {
     font-size: 50px;

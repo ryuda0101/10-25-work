@@ -11,6 +11,7 @@ button {
     cursor:pointer;
 }
 
+
 // 헤더
 #header {
     position:fixed; z-index:99; width:100%;
@@ -56,7 +57,7 @@ button {
                         }
                     }
                     > a {
-                        color:#002b31; position:relative;
+                        color:#002b31; position:relative; font-weight:bold; line-height:2;
                         &::after {
                             content:""; display:block;
                             width:0; height:1px; background-color:#aa8453;
@@ -68,7 +69,7 @@ button {
                         position:absolute; height:0; top:110px;
                         z-index:99; background-color:#fff;
                         overflow:hidden; transition:all 0.5s;
-                        padding:0 20px;
+                        padding:0 15px;
                         li {
                             line-height:2;
                             &:hover {
@@ -170,22 +171,67 @@ button {
 .main_banner {
     position:relative;
     .center {
+        #banner_h2 {
+            margin-bottom:0;
+            &::after {display:none;}
+        }
         .check_box {
-            width:100%; display:flex; justify-content:center;
-            position:absolute;
-            bottom:30px; right:50%; transform:translateX(50%);
-            input {
-                width:15%; height:62px;
+            // background-color:#002b31;
+            padding:15px 100%; border-radius:15px;
+            width:50%;
+            position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+            > div {
+                input {
+                    height:50px;
+                    border:1px solid #002b31; margin-bottom:5px;
+                }
+                select {
+                    width:32.333333%; height:50px;
+                    border:1px solid #002b31; margin-bottom:5px;
+                }
+                a {
+                    width:20%; height:50px; display:inline-block;
+                    background-color:#8e6d45; color:#fff;
+                    line-height:50px; margin:0 auto;
+                }
             }
-            select {
-                width:15%; height:62px;
+            .date_line {
+                display:flex; width:100%; justify-content:space-between;
+                .line {
+                    display:flex; flex-direction:column; width:49%;
+                    input,label {
+                        width:100%;
+                    }
+                    label {
+                        text-align:left; font-weight:bold; margin-bottom:5px; color:#132326;
+                    }
+                }
             }
-            a {
-                width:15%; height:62px; display:inline-block;
-                background-color:#aa8453; color:#fff;
-                line-height:62px;
+            .select_line {
+                width:100%;
+                display:flex; justify-content:space-between;
+            }
+            .btn_line {
+                width:100%;
+                display:flex; justify-content:space-between;
             }
         }
+        // .check_box {
+        //     width:100%; display:flex; justify-content:center;
+        //     position:absolute;
+        //     bottom:30px; right:50%; transform:translateX(50%);
+        //     input {
+        //         width:15%; height:62px;
+        //     }
+        //     select {
+        //         width:15%; height:62px;
+        //     }
+        //     a {
+        //         width:15%; height:62px; display:inline-block;
+        //         background-color:#aa8453; color:#fff;
+        //         line-height:62px;
+        //     }
+        // }
     }
 }
 
@@ -742,9 +788,8 @@ button {
                             margin:15px 0;
                         }
                         .sns {
-                            display:flex; justify-content:center;
+                            display:flex; justify-content:center; justify-content:space-around;
                             li {
-                                margin:0 10px;
                                 a {
                                     width:45px; height:45px; background-color:#fff;
                                     display:block; line-height:45px; text-align:center;
@@ -768,6 +813,10 @@ button {
     position:relative;
     .view {
         width:500%; display:flex; transition:all 0.5s;
+        .room_name {
+            position:absolute; top:50%; transform:translateY(-50%); left:150px;
+            font-size:125px; color:#fff; font-weight:100;
+        }
         &:hover {
             .point_btns {
                 .left {
@@ -782,7 +831,7 @@ button {
             position:absolute; bottom:0; left:50%; transform:translateX(-50%);
             display:flex; justify-content:space-between; width:100%; height:100%;
             i {
-                position:absolute; font-size:100px; color:#002b31; z-index:99;
+                position:absolute; font-size:100px; color:#fff; z-index:99;
                 top:50%; transform:translateY(-50%); transition:all 0.5s;
                 cursor:pointer;
             }
@@ -887,6 +936,7 @@ button {
     }
 
     .welcome {
+        padding:50px 0 100px 0;
         background-color:#002b31;
         text-align:center;
         .center {
@@ -1280,6 +1330,9 @@ button {
     // 서브페이지02 반응형 시작
     #slideWrap {
         .view {
+            .room_name {
+                font-size:100px;
+            }
             .point_btns {
                 i {font-size:70px;}
             }
@@ -1380,10 +1433,29 @@ button {
                 }
             }
         }
+        .team_members {
+            .center {
+                .team_boxs {
+                    .box {
+                        .text_box {
+                            .sns {
+                                display:none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+
     // 서브페이지02 반응형
     #slideWrap {
         .view {
+            .room_name {
+                left:50%;
+                transform:translate(-50%, -50%);
+                text-align:center; font-size:80px;
+            }
             .point_btns {
                 i {font-size:50px;}
             }
