@@ -357,9 +357,8 @@ button {
                 position:absolute;
                 top:50%; left:50%;
                 transform:translate(-50%, -50%);
-                border:5px solid rgba(255,255,255,0.5);
-                padding:10%;
                 h3 {
+                    font-size:35px;
                     color:#fff;
                 }
             }
@@ -391,15 +390,7 @@ button {
         width:$center;
         margin:130px 0;
         background-color:#fff;
-        .top_text {
-            margin-bottom:70px;
-            h2,p {
-                text-align:center;
-                font-size:40px;
-                margin:auto 0;
-            }
-            p {font-size:15px; margin-top:10px;}
-        }
+
         table {
             width:100%; margin-bottom:30px;
             tr {
@@ -447,15 +438,6 @@ button {
     display:flex; justify-content:center;
     .center {
         margin:130px 0; width:$center;
-        .top_text {
-            margin:130px 0 70px;
-            h2,p {
-                text-align:center;
-                font-size:40px;
-                margin:auto 0;
-            }
-            p {font-size:15px; margin-top:10px;}
-        }
         .brd_detail {
             margin-bottom:30px;
             width:100%;
@@ -781,7 +763,7 @@ button {
 
 // 서브페이지02 / rooms
 #slideWrap {
-    width:100%; overflow:hidden;
+    height:100vh; width:100%; overflow:hidden;
     position:relative;
     .view {
         width:500%; display:flex; transition:all 0.5s;
@@ -823,8 +805,8 @@ button {
             }
         }
         .box {
-            width:25%;
-            img {width:100%;}
+            width:25%; overflow:hidden;
+            img {height:100%;}
         }
     }
 }
@@ -853,7 +835,7 @@ button {
                 .amenity {
                     display:flex; flex-direction:column; 
                     >div {
-                        display:flex; justify-content:space-around; width:50%; flex-direction:column;
+                        display:flex; justify-content:space-around; width:100%; flex-direction:column;
                     }
                     .box {
                         display:flex; margin-bottom:50px; justify-content:space-around; align-items:center;
@@ -1077,7 +1059,8 @@ button {
                     }
                 }
                 .big {
-                    width:64.8%; overflow:hidden;
+                    // width:64.8%; 
+                    overflow:hidden;
                     img {width:100%;}
                 }
             }
