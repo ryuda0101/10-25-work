@@ -477,6 +477,7 @@ button {
 #login_page .center .right_box .text_box h3 {
   font-size: 35px;
   color: #fff;
+  font-weight: 300;
 }
 
 #Register_btns #loginBtn {
@@ -793,7 +794,7 @@ button {
 }
 #about_us .welcome .center .right_box img {
   position: absolute;
-  width: 250px;
+  width: 45%;
 }
 #about_us .welcome .center .right_box .img01 {
   left: 0;
@@ -944,8 +945,6 @@ button {
 }
 
 #slideWrap {
-  height: 100vh;
-  width: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -1720,13 +1719,16 @@ button {
     width: 120px;
   }
   #about_us .welcome .center .left_box {
-    width: 55%;
+    width: 100%;
   }
   #about_us .welcome .center .left_box h3 {
     font-size: 30px;
   }
-  #about_us .welcome .center .right_box img {
-    width: 200px;
+  #about_us .welcome .center .right_box {
+    display: none;
+  }
+  #slideWrap .view .circle_btns {
+    display: none;
   }
   #rooms .room .center {
     display: block;
@@ -1871,12 +1873,6 @@ button {
   }
   #footer .footer_info .center > div h3 {
     margin: 50px 0 20px;
-  }
-  #about_us .welcome .center .left_box {
-    width: 100%;
-  }
-  #about_us .welcome .center .right_box {
-    display: none;
   }
   #about_us .services {
     padding-bottom: 100px;

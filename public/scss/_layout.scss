@@ -360,6 +360,7 @@ button {
                 h3 {
                     font-size:35px;
                     color:#fff;
+                    font-weight:300;
                 }
             }
         }
@@ -619,7 +620,7 @@ button {
                 display:flex; position:relative; width:50%;
                 img {
                     position:absolute;
-                    width:250px;
+                    width:45%;
                 }
                 .img01 {
                     left:0;
@@ -763,7 +764,7 @@ button {
 
 // 서브페이지02 / rooms
 #slideWrap {
-    height:100vh; width:100%; overflow:hidden;
+    overflow:hidden;
     position:relative;
     .view {
         width:500%; display:flex; transition:all 0.5s;
@@ -1556,7 +1557,7 @@ button {
         }
     }
     
-    // 서브페이지 반응형
+    // 서브페이지01 반응형
     #about_us {
         >div {
             .center {
@@ -1569,21 +1570,26 @@ button {
         .welcome {
             .center {
                 .left_box {
-                    width:55%;
+                    width:100%;
                     h3 {
                       font-size:30px;  
                     }
                 }
                 .right_box {
-                    img {width:200px;}
-                    .img01 {
-                    }
+                    display:none;
                 }
             }
         }
     }
 
-    // 서브페이지02 반응형
+    // 서브페이지02 반응형'
+    #slideWrap {
+        .view {
+           .circle_btns {
+            display:none;
+           } 
+        }
+    }
     #rooms {
         .room {
             .center {
@@ -1778,18 +1784,8 @@ button {
             }
         }
 
-        // 서브페이지 반응형
+        // 서브페이지01 반응형
         #about_us {
-            .welcome {
-                .center {
-                    .left_box {
-                        width:100%;
-                    }
-                    .right_box {
-                        display:none;
-                    }
-                }
-            }
             .services {
                 padding-bottom:100px;
                 .center {
