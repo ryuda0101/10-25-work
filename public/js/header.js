@@ -24,7 +24,23 @@ window.addEventListener("scroll",function(){
     }
 });
 
-hamBtn.addEventListener("click",function(){hamGnb.style.width = "40%";});
+// 조건문 안먹히는 오류 있음!!
+
+
+hamBtn.addEventListener("click",function(){
+    if (window.matchMedia("screen and (max-width:1001px)").matches) {
+        hamGnb.style.width = "50%";
+        console.log("50")
+    }
+    else if (window.matchMedia("screen and (max-width:1000px) and (min-width:769px)").matches) {
+        hamGnb.style.width = "60%";
+        console.log("60")
+    }
+    else if (window.matchMedia("screen and (max-width:768px)").matches) {
+        hamGnb.style.width = "70%";
+        console.log("70")
+    }
+});
 
 hamCloseBtn.addEventListener("click", () => hamGnb.style.width = 0);
 

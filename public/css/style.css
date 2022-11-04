@@ -198,6 +198,15 @@ button {
   justify-content: space-around;
   height: 65%;
 }
+#header .ham_gnb .gnb .hamUserInfo {
+  display: flex;
+}
+#header .ham_gnb .gnb .hamUserInfo .login_btn, #header .ham_gnb .gnb .hamUserInfo .register_btn {
+  margin: 0 10px;
+}
+#header .ham_gnb .gnb .login p {
+  margin-bottom: 10px;
+}
 #header .ham_gnb .gnb > li > a {
   font-size: 15px;
   width: 100%;
@@ -1409,9 +1418,6 @@ button {
 #main_page .count .center .count_one .text p {
   color: #ddd;
 }
-#main_page .news .center {
-  width: 77%;
-}
 #main_page .news .center .boxs {
   width: 100%;
   overflow: hidden;
@@ -1444,15 +1450,13 @@ button {
   right: -100px;
 }
 #main_page .news .center .boxs .view {
-  width: 600%;
-  position: relative;
-  left: 0;
+  width: 150%;
   display: flex;
-  transition: all 0.5s;
 }
 #main_page .news .center .boxs .view .box {
-  margin: 0 0.1%;
-  width: 3.946%;
+  padding: 0 0.2%;
+  width: 25%;
+  box-sizing: border-box;
 }
 #main_page .news .center .boxs .view .box:hover .img_box span {
   background-color: rgba(0, 0, 0, 0.6);
@@ -1603,11 +1607,20 @@ button {
   #main_page .looking_for .center .context_boxs .right_box .line i {
     font-size: 70px;
   }
+  #main_page .news .center .boxs .view {
+    width: 199.999999%;
+  }
+  #main_page .news .center .boxs .view .box {
+    width: 33.333333%;
+  }
   #login_page .center {
     width: 70%;
   }
 }
 @media (max-width: 1000px) {
+  #header .top_box {
+    display: none;
+  }
   #header .bot_box .center .gnb {
     display: none;
   }
@@ -1716,10 +1729,19 @@ button {
   #main_page .rooms .center .boxs .box.width img {
     width: 130%;
   }
+  #main_page .news .center .boxs .view {
+    width: 300%;
+  }
+  #main_page .news .center .boxs .view .box {
+    width: 50%;
+  }
   #main_page .news .center .boxs .view .box .img_box .date_box {
     width: 50%;
     height: 62%;
-    margin: 14%;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   #main_page .news .center .boxs .view .box .img_box .date_box p {
     font-size: 30px;
@@ -1771,6 +1793,12 @@ button {
   }
 }
 @media (max-width: 768px) {
+  #header .ham_gnb .gnb .hamUserInfo a {
+    font-size: 20px;
+  }
+  #header .ham_gnb .gnb > li > a {
+    font-size: 20px;
+  }
   .main_banner .center .check_box {
     display: none;
   }
@@ -1855,6 +1883,12 @@ button {
   }
   #main_page .news {
     overflow: hidden;
+  }
+  #main_page .news .center .boxs .view {
+    width: 600%;
+  }
+  #main_page .news .center .boxs .view .box {
+    width: 100%;
   }
   #main_page .news .center .boxs .view .box .img_box .date_box p {
     font-size: 30px;

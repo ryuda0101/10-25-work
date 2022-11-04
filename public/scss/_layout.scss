@@ -118,6 +118,13 @@ button {
         }
         .gnb {
             display:flex; flex-direction:column; justify-content:space-around; height:65%;
+            .hamUserInfo {
+                display:flex;
+                .login_btn,.register_btn {margin:0 10px;}
+            }
+            .login {
+                p {margin-bottom:10px;}
+            }
             > li {
                 > a {
                     font-size:15px; width:100%;
@@ -1146,7 +1153,7 @@ button {
     }
     .news {
         .center {
-            width:77%; 
+            // width:77%;
             .boxs {
                 width:100%;
                 overflow:hidden; position:relative;
@@ -1176,10 +1183,9 @@ button {
                 }
                 .view {
                     // 스크립트에서 left값 바꿔주기!
-                    width:600%; position:relative; left:0; display:flex;
-                    transition:all 0.5s;
+                    width:150%; display:flex;
                     .box {
-                        margin:0 0.1%; width:3.946%;
+                        padding:0 0.2%; width:25%; box-sizing:border-box;
                         &:hover {
                             .img_box {
                                 span {
@@ -1355,6 +1361,16 @@ button {
                 }
             }
         }
+        .news {
+            .center {
+                .boxs {
+                    .view {
+                        width:199.999999%;
+                        .box {width:33.333333%;}
+                    }
+                }
+            }
+        }
     }
 
     // 로그인, 회원가입 페이지
@@ -1369,6 +1385,7 @@ button {
 @media (max-width:1000px) {
     // 헤더 작업
     #header {
+        .top_box {display:none;}
         .bot_box {
             .center {
                 .gnb {
@@ -1538,12 +1555,15 @@ button {
             .center {
                 .boxs {
                     .view {
+                        width:300%;
                         .box{
+                            width:50%;
                             .img_box {
                                 .date_box {
                                     width:50%;
                                     height:62%;
-                                    margin:14%;
+                                    margin:auto;
+                                    top:50%; left:50%; transform:translate(-50%, -50%);
                                     p {
                                         font-size:30px; line-height:250%;
                                     }
@@ -1620,6 +1640,24 @@ button {
 }
 
 @media (max-width: 768px) {
+    // 헤더 gnb 메뉴 반응형
+    #header {
+        .ham_gnb {
+            .gnb{
+                .hamUserInfo {
+                    a {
+                        font-size:20px;
+                    }
+                }
+                > li {
+                    > a {
+                        font-size:20px;
+                    }
+                }
+            }
+        }
+    }
+
     // 메인 배너 반응형
     .main_banner {
         .center {
@@ -1738,7 +1776,9 @@ button {
             .center {
                 .boxs {
                     .view {
+                        width:600%;
                         .box{
+                            width:100%;
                             .img_box {
                                 .date_box {
                                     p {
@@ -1831,6 +1871,8 @@ button {
 }
 
 @media (max-width: 580px) {
+        // 헤더 작업
+
         // 배너 작업
         #banner {
             .center {
