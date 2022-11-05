@@ -14,7 +14,7 @@ button {
 
 // 헤더
 #header {
-    position:fixed; z-index:99; width:100%;
+    position:fixed; z-index:99; width:100vw;
     .top_box {
         background-color:#002b31; display:flex; justify-content:center;
         .center {
@@ -106,50 +106,46 @@ button {
         position:fixed; top:0; right:0;
         width:0; height:100vh; overflow:hidden;
         display:flex; align-items:center; justify-content:center;
-        .close_btn {
-            position:absolute; top:30px; right:30px;
-            span {display:block; width:25px; height:1px; background-color:#000; cursor:pointer;}
-            .first {
-                transform:rotate(45deg) translateX(1px);
+        .gnb_wrap {
+            display:flex; justify-content:space-around; align-items:baseline;
+            width:100%; height:80%;
+            .close_btn {
+                span {display:block; width:25px; height:1px; background-color:#000; cursor:pointer;}
+                .first {
+                    transform:rotate(45deg) translateX(1px);
+                }
+                .last {
+                    transform:rotate(-45deg) translateX(0px);
+                }
             }
-            .last {
-                transform:rotate(-45deg) translateX(0px);
-            }
-        }
-        .gnb {
-            display:flex; flex-direction:column; justify-content:space-around; height:65%;
-            .hamUserInfo {
-                display:flex;
-                .login_btn,.register_btn {margin:0 10px;}
-            }
-            .login {
-                p {margin-bottom:10px;}
-            }
-            > li {
-                > a {
-                    font-size:15px; width:100%;
-                    font-family: 'Noto Serif Display', serif;
-                    font-weight:300;
-                    color:#000;
-                    position:relative;
-                    &::after {
-                        content:""; display:block; position:absolute;
-                        width:0; height:1px; background-color:#aa8453;
-                        transition:all 0.5s; margin-top:2px;
-                    }
-                    &:hover {
+            .gnb {
+                display:flex; flex-direction:column; justify-content:space-between; height:100%;
+                .hamUserInfo {
+                    display:flex;
+                    .login_btn,.register_btn {margin-right:20px;}
+                }
+                .login {
+                    p {margin-bottom:10px;}
+                }
+                > li {
+                    > a {
+                        font-size:25px; width:100%;
+                        font-family: 'Noto Serif Display', serif;
+                        font-weight:300;
+                        color:#000;
+                        position:relative;
                         &::after {
-                            width:100%;
+                            content:""; display:block; position:absolute;
+                            width:0; height:1px; background-color:#aa8453;
+                            transition:all 0.5s; margin-top:2px;
+                        }
+                        &:hover {
+                            &::after {
+                                width:100%;
+                            }
                         }
                     }
                 }
-
-                ul {
-                    li {
-                        a {}
-                    }
-                }
-
             }
         }
     }
@@ -186,7 +182,7 @@ button {
             // background-color:#002b31;
             padding:15px 100%; border-radius:15px;
             width:50%;
-            position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+            position:absolute; bottom:10%; left:50%; transform:translateX(-50%);
             > div {
                 input {
                     height:50px;
@@ -668,6 +664,7 @@ button {
             position:relative;
             .left_box {
                 width:50%; padding:15px;
+                p {font-family: 'Noto Sans KR', sans-serif;}
             }
             .right_box {
                 display:flex; position:relative; width:50%;
@@ -710,7 +707,8 @@ button {
                             margin:15px 0;
                         }
                         p {
-                            margin-bottom:25px; line-height:1; 
+                            margin-bottom:25px; line-height:1;
+                            font-family: 'Noto Sans KR', sans-serif;
                         }
                     }
                 }
@@ -733,6 +731,11 @@ button {
                     width:33.333333%;
                     margin:0 1%;
                     overflow:hidden;
+                    .text_box {
+                        p {
+                            font-family: 'Noto Sans KR', sans-serif;
+                        }
+                    }
                     span {
                         position:absolute;
                         right:0; bottom:0;
@@ -837,8 +840,8 @@ button {
         .point_btns {
             position:absolute; bottom:0; left:50%; transform:translateX(-50%);
             display:flex; justify-content:space-between; width:100%; height:100%;
-            i {
-                position:absolute; font-size:100px; color:#fff; z-index:99;
+            img {
+                position:absolute; z-index:10; width:40px;
                 top:50%; transform:translateY(-50%); transition:all 0.5s;
                 cursor:pointer;
             }
@@ -906,6 +909,16 @@ button {
                 > div {
                     margin-bottom:100px;
                 }
+                p {font-family: 'Noto Sans KR', sans-serif;}
+                .view {
+                    ul {
+                        li {
+                            font-family: 'Noto Sans KR', sans-serif;
+                            color:#555; line-height:1.5;
+                            list-style:disc;
+                        }
+                    }
+                }
                 a {
                     display:block;
                     width:168px; height:44px; line-height:44px; text-align:center;
@@ -943,23 +956,24 @@ button {
     }
 
     .welcome {
-        padding:50px 0 100px 0;
         background-color:#002b31;
         text-align:center;
         .center {
             h2 {
-                color:#F1A691;
+                color:#F1A691; margin-bottom:60px;
                 &::after {margin:15px auto; background-color:#F1A691;}
             }
-            p {
-                color:#F1A691;
+            .context_box {
+                p {
+                    color:#F1A691; text-align:left; margin-bottom:25px;
+                    font-family: 'Noto Sans KR', sans-serif; font-weight:300;
+                }
             }
         }
     }
     .looking_for {
         overflow:hidden;
         .center {
-            h2 {}
             .context_boxs {
                 display:flex; justify-content:space-between;
                 .left_box {
@@ -981,7 +995,7 @@ button {
                         .text {
                             width:80%;
                             p {
-                                line-height:1.5;
+                                line-height:1.5; font-family: 'Noto Sans KR', sans-serif; margin-top:5px;
                             }
                         }
                     }
@@ -1169,8 +1183,8 @@ button {
                 }
                 .btns {
                     display:flex; justify-content:space-between;
-                    i {
-                        position:absolute; font-size:100px; color:#002b31; z-index:99;
+                    img {
+                        position:absolute; width:30px; z-index:2;
                         top:50%; transform:translateY(-50%); transition:all 0.5s;
                         cursor:pointer;
                     }
@@ -1220,7 +1234,7 @@ button {
                                 font-size:25px; margin-bottom:5px;
                             }
                             p {
-                                font-size:12px; color:#ddd;
+                                font-size:12px; color:#ddd; font-family: 'Noto Sans KR', sans-serif;
                             }
                         }
                     }
@@ -1237,9 +1251,8 @@ button {
             position:absolute; bottom:0;
         }
         .center {
-            h2 {}
             p {
-                margin-bottom:40px;
+                margin-bottom:40px; font-family: 'Noto Sans KR', sans-serif;
             }
             img {
                 width:100%;
@@ -1252,6 +1265,9 @@ button {
         // background-attachment:fixed;
         // background-size:cover; background-repeat:no-repeat;
         .center {
+            .contactUs_context {
+                font-family: 'Noto Sans KR', sans-serif;
+            }
             .boxs {
                 display:flex; justify-content:space-between;            
                 margin:100px 0; width:100%;
@@ -1340,7 +1356,7 @@ button {
                 font-size:100px;
             }
             .point_btns {
-                i {font-size:70px;}
+                img {width:35px;}
             }
         }
     }
@@ -1474,7 +1490,7 @@ button {
                 text-align:center; font-size:80px;
             }
             .point_btns {
-                i {font-size:50px;}
+                img {width:30px}
             }
         }
     }
@@ -1664,6 +1680,9 @@ button {
             .check_box {
                 display:none;
             }
+            #banner_h2 {
+                // font-size:25px;
+            }
         }
     }
     
@@ -1698,6 +1717,9 @@ button {
            .circle_btns {
             display:none;
            } 
+            .point_btns {
+                img {width:25px;}
+            }
         }
     }
     #rooms {
@@ -1741,9 +1763,6 @@ button {
                             position:relative;
                             span {
                                 position:absolute; top:0; left:0; z-index:1;
-                            }
-                            img {
-                                position:absolute; bottom:-20%;
                             }
                         }
                         .text_box {z-index:2;}
@@ -1930,7 +1949,7 @@ button {
         #slideWrap {
             .view {
                 .point_btns {
-                    i {font-size:50px;}
+                    img {width:20px;}
                 }
             }
         }

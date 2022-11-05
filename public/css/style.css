@@ -54,7 +54,7 @@ button {
 #header {
   position: fixed;
   z-index: 99;
-  width: 100%;
+  width: 100vw;
 }
 #header .top_box {
   background-color: #002b31;
@@ -174,48 +174,50 @@ button {
   align-items: center;
   justify-content: center;
 }
-#header .ham_gnb .close_btn {
-  position: absolute;
-  top: 30px;
-  right: 30px;
+#header .ham_gnb .gnb_wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 100%;
+  height: 80%;
 }
-#header .ham_gnb .close_btn span {
+#header .ham_gnb .gnb_wrap .close_btn span {
   display: block;
   width: 25px;
   height: 1px;
   background-color: #000;
   cursor: pointer;
 }
-#header .ham_gnb .close_btn .first {
+#header .ham_gnb .gnb_wrap .close_btn .first {
   transform: rotate(45deg) translateX(1px);
 }
-#header .ham_gnb .close_btn .last {
+#header .ham_gnb .gnb_wrap .close_btn .last {
   transform: rotate(-45deg) translateX(0px);
 }
-#header .ham_gnb .gnb {
+#header .ham_gnb .gnb_wrap .gnb {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 65%;
+  justify-content: space-between;
+  height: 100%;
 }
-#header .ham_gnb .gnb .hamUserInfo {
+#header .ham_gnb .gnb_wrap .gnb .hamUserInfo {
   display: flex;
 }
-#header .ham_gnb .gnb .hamUserInfo .login_btn, #header .ham_gnb .gnb .hamUserInfo .register_btn {
-  margin: 0 10px;
+#header .ham_gnb .gnb_wrap .gnb .hamUserInfo .login_btn, #header .ham_gnb .gnb_wrap .gnb .hamUserInfo .register_btn {
+  margin-right: 20px;
 }
-#header .ham_gnb .gnb .login p {
+#header .ham_gnb .gnb_wrap .gnb .login p {
   margin-bottom: 10px;
 }
-#header .ham_gnb .gnb > li > a {
-  font-size: 15px;
+#header .ham_gnb .gnb_wrap .gnb > li > a {
+  font-size: 25px;
   width: 100%;
   font-family: "Noto Serif Display", serif;
   font-weight: 300;
   color: #000;
   position: relative;
 }
-#header .ham_gnb .gnb > li > a::after {
+#header .ham_gnb .gnb_wrap .gnb > li > a::after {
   content: "";
   display: block;
   position: absolute;
@@ -225,9 +227,10 @@ button {
   transition: all 0.5s;
   margin-top: 2px;
 }
-#header .ham_gnb .gnb > li > a:hover::after {
+#header .ham_gnb .gnb_wrap .gnb > li > a:hover::after {
   width: 100%;
 }
+
 #banner {
   background-image: url(/img/00.png);
   background-attachment: fixed;
@@ -264,7 +267,7 @@ button {
   border-radius: 15px;
   width: 50%;
   position: absolute;
-  bottom: 0;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -838,6 +841,9 @@ button {
   width: 50%;
   padding: 15px;
 }
+#about_us .welcome .center .left_box p {
+  font-family: "Noto Sans KR", sans-serif;
+}
 #about_us .welcome .center .right_box {
   display: flex;
   position: relative;
@@ -883,6 +889,7 @@ button {
 #about_us .services .center .boxs .box .text_box p {
   margin-bottom: 25px;
   line-height: 1;
+  font-family: "Noto Sans KR", sans-serif;
 }
 #about_us .clients_say {
   background-color: #002b31;
@@ -908,6 +915,9 @@ button {
   width: 33.333333%;
   margin: 0 1%;
   overflow: hidden;
+}
+#about_us .clients_say .center .customers .customer .text_box p {
+  font-family: "Noto Sans KR", sans-serif;
 }
 #about_us .clients_say .center .customers .customer span {
   position: absolute;
@@ -1027,11 +1037,10 @@ button {
   width: 100%;
   height: 100%;
 }
-#slideWrap .view .point_btns i {
+#slideWrap .view .point_btns img {
   position: absolute;
-  font-size: 100px;
-  color: #fff;
-  z-index: 99;
+  z-index: 10;
+  width: 40px;
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.5s;
@@ -1138,6 +1147,15 @@ button {
 #rooms .room .center .left > div {
   margin-bottom: 100px;
 }
+#rooms .room .center .left p {
+  font-family: "Noto Sans KR", sans-serif;
+}
+#rooms .room .center .left .view ul li {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #555;
+  line-height: 1.5;
+  list-style: disc;
+}
 #rooms .room .center .left a {
   display: block;
   width: 168px;
@@ -1181,19 +1199,23 @@ button {
   line-height: 30px;
 }
 #main_page .welcome {
-  padding: 50px 0 100px 0;
   background-color: #002b31;
   text-align: center;
 }
 #main_page .welcome .center h2 {
   color: #F1A691;
+  margin-bottom: 60px;
 }
 #main_page .welcome .center h2::after {
   margin: 15px auto;
   background-color: #F1A691;
 }
-#main_page .welcome .center p {
+#main_page .welcome .center .context_box p {
   color: #F1A691;
+  text-align: left;
+  margin-bottom: 25px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
 }
 #main_page .looking_for {
   overflow: hidden;
@@ -1232,6 +1254,8 @@ button {
 }
 #main_page .looking_for .center .context_boxs .right_box .line .text p {
   line-height: 1.5;
+  font-family: "Noto Sans KR", sans-serif;
+  margin-top: 5px;
 }
 #main_page .rooms {
   background-color: #002b31;
@@ -1433,11 +1457,10 @@ button {
   display: flex;
   justify-content: space-between;
 }
-#main_page .news .center .boxs .btns i {
+#main_page .news .center .boxs .btns img {
   position: absolute;
-  font-size: 100px;
-  color: #002b31;
-  z-index: 99;
+  width: 30px;
+  z-index: 2;
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.5s;
@@ -1501,6 +1524,7 @@ button {
 #main_page .news .center .boxs .view .box .text_box p {
   font-size: 12px;
   color: #ddd;
+  font-family: "Noto Sans KR", sans-serif;
 }
 #main_page .gift {
   position: relative;
@@ -1515,9 +1539,13 @@ button {
 }
 #main_page .gift .center p {
   margin-bottom: 40px;
+  font-family: "Noto Sans KR", sans-serif;
 }
 #main_page .gift .center img {
   width: 100%;
+}
+#main_page .contact_us .center .contactUs_context {
+  font-family: "Noto Sans KR", sans-serif;
 }
 #main_page .contact_us .center .boxs {
   display: flex;
@@ -1598,8 +1626,8 @@ button {
   #slideWrap .view .room_name {
     font-size: 100px;
   }
-  #slideWrap .view .point_btns i {
-    font-size: 70px;
+  #slideWrap .view .point_btns img {
+    width: 35px;
   }
   #main_page > div .center {
     width: 80%;
@@ -1661,8 +1689,8 @@ button {
     text-align: center;
     font-size: 80px;
   }
-  #slideWrap .view .point_btns i {
-    font-size: 50px;
+  #slideWrap .view .point_btns img {
+    width: 30px;
   }
   #rooms .room .center {
     display: block;
@@ -1820,6 +1848,9 @@ button {
   #slideWrap .view .circle_btns {
     display: none;
   }
+  #slideWrap .view .point_btns img {
+    width: 25px;
+  }
   #rooms .room .center {
     display: block;
   }
@@ -1854,10 +1885,6 @@ button {
     top: 0;
     left: 0;
     z-index: 1;
-  }
-  #main_page .rooms .center .boxs .box.width .img_box img {
-    position: absolute;
-    bottom: -20%;
   }
   #main_page .rooms .center .boxs .box.width .text_box {
     z-index: 2;
@@ -1994,8 +2021,8 @@ button {
     width: 100%;
     margin-bottom: 40px;
   }
-  #slideWrap .view .point_btns i {
-    font-size: 50px;
+  #slideWrap .view .point_btns img {
+    width: 20px;
   }
   #main_page .rooms .center .boxs .box {
     margin-top: 5%;

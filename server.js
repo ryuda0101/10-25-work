@@ -235,28 +235,28 @@ app.post("/updatecomment",function(req,res){
 
 // 서브페이지01
 app.get("/about_us",function(req,res){
-    res.render("sub_page1",{userData:req.user});
+    res.render("subPage_about_us",{userData:req.user});
 });
 
 // 서브페이지02 / junior_suite
 app.get("/junior_suite",function(req,res){
-    res.render("junior_suite",{userData:req.user});
+    res.render("roomPage_junior_suite",{userData:req.user});
 });
 // 서브페이지03 / family_room
 app.get("/family_room",function(req,res){
-    res.render("family_room",{userData:req.user});
+    res.render("roomPage_family_room",{userData:req.user});
 });
 // 서브페이지04 / double_room
 app.get("/double_room",function(req,res){
-    res.render("double_room",{userData:req.user});
+    res.render("roomPage_double_room",{userData:req.user});
 });
 // 서브페이지05 / deluxe_room
 app.get("/deluxe_room",function(req,res){
-    res.render("deluxe_room",{userData:req.user});
+    res.render("roomPage_deluxe_room",{userData:req.user});
 });
 // 서브페이지06 / superior_room
 app.get("/superior_room",function(req,res){
-    res.render("superior_room",{userData:req.user});
+    res.render("roomPage_superior_room",{userData:req.user});
 });
 
 

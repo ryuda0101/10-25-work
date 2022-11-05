@@ -24,23 +24,33 @@ window.addEventListener("scroll",function(){
     }
 });
 
-// 조건문 안먹히는 오류 있음!!
-
-
 hamBtn.addEventListener("click",function(){
-    if (window.matchMedia("screen and (max-width:1001px)").matches) {
-        hamGnb.style.width = "50%";
-        console.log("50")
-    }
-    else if (window.matchMedia("screen and (max-width:1000px) and (min-width:769px)").matches) {
-        hamGnb.style.width = "60%";
-        console.log("60")
-    }
-    else if (window.matchMedia("screen and (max-width:768px)").matches) {
-        hamGnb.style.width = "70%";
-        console.log("70")
-    }
+    hamGnb.style.width = "100%";
 });
+
+// 조건문 안먹히는 오류 있음!!
+// window.addEventListener("load",() => {
+//     console.log("로드 완료")
+//     if (window.matchMedia("screen and (max-width:1000px)").matches) {
+//         hamBtn.addEventListener("click",function(){
+//             hamGnb.style.width = "50%";
+//             console.log("50")
+//         });
+//     }
+//     else if (window.matchMedia("screen and (max-width:769px) and (min-width:300px)").matches) {
+//         hamBtn.addEventListener("click",function(){
+//             hamGnb.style.width = "60%";
+//             console.log("60")
+//         });
+//     }
+//     else if (window.matchMedia("screen and (max-width:768px)").matches) {
+//         hamBtn.addEventListener("click",function(){
+//             hamGnb.style.width = "70%";
+//             console.log("70")
+//         });
+//     }
+// });
+
 
 hamCloseBtn.addEventListener("click", () => hamGnb.style.width = 0);
 
@@ -53,6 +63,9 @@ hamGnb.addEventListener("mouseenter",() => {
     
         el.addEventListener("mouseleave",() => {
             el.style.color = "#aaa";
+        });
+        el.addEventListener("click", () => {
+            hamGnb.style.width = 0
         });
     });
 })
