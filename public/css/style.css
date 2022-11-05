@@ -1648,6 +1648,9 @@ button {
   }
 }
 @media (max-width: 1000px) {
+  #header {
+    position: fixed;
+  }
   #header .top_box {
     display: none;
   }

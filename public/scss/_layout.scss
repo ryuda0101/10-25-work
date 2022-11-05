@@ -1402,6 +1402,7 @@ button {
 @media (max-width:1000px) {
     // 헤더 작업
     #header {
+        position:fixed;
         .top_box {display:none;}
         .bot_box {
             .center {
