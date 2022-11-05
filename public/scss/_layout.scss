@@ -821,6 +821,7 @@ button {
 #slideWrap {
     overflow:hidden;
     position:relative;
+    width:100vw;
     .view {
         width:500%; display:flex; transition:all 0.5s;
         .room_name {
@@ -871,7 +872,7 @@ button {
     }
 }
 #rooms {
-    padding:100px 0;
+    padding:100px 0; overflow-x:hidden;
     .room {
         display:flex; justify-content:center;
         .center {
@@ -1841,6 +1842,11 @@ button {
             width:80%;
             .write {
                 margin-bottom:80px;
+            }
+            .search_menu {
+                #searchInput {
+                    width:50%;
+                }
             }
         }
     }

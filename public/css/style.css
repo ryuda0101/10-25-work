@@ -1006,6 +1006,7 @@ button {
 #slideWrap {
   overflow: hidden;
   position: relative;
+  width: 100vw;
 }
 #slideWrap .view {
   width: 500%;
@@ -1081,6 +1082,7 @@ button {
 
 #rooms {
   padding: 100px 0;
+  overflow-x: hidden;
 }
 #rooms .room {
   display: flex;
@@ -1947,6 +1949,9 @@ button {
   }
   #brd_list .center .write {
     margin-bottom: 80px;
+  }
+  #brd_list .center .search_menu #searchInput {
+    width: 50%;
   }
   #brd_insert .center {
     width: 80%;
