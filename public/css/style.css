@@ -1660,6 +1660,9 @@ button {
   #banner .center h2 {
     font-size: 35px;
   }
+  .main_banner .center .check_box .btn_line a {
+    width: 35%;
+  }
   #footer .footer_info .center .top_box, #footer .footer_info .center .bot_box {
     flex-direction: column;
     justify-content: space-around;
