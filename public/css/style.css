@@ -1174,6 +1174,9 @@ button {
   color: #fff;
 }
 
+#main_page {
+  overflow-x: hidden;
+}
 #main_page > div {
   display: flex;
   justify-content: center;
@@ -1718,9 +1721,6 @@ button {
   }
   #rooms .room .center .right .amenity .box {
     flex-direction: column;
-  }
-  #main_page {
-    overflow-x: hidden;
   }
   #main_page .looking_for .center .context_boxs .left_box {
     display: none;

@@ -172,7 +172,7 @@ button {
 }
 // 메인화면 배너
 .main_banner {
-    position:relative;
+    position:relative; overflow-x:hidden;
     .center {
         #banner_h2 {
             margin-bottom:0;
