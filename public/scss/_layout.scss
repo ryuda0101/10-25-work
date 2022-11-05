@@ -936,6 +936,7 @@ button {
 
 // 메인페이지
 #main_page {
+    overflow-x:hidden;
     >div {
         display:flex; justify-content:center;
         padding:100px 0;
@@ -1531,7 +1532,6 @@ button {
 
     // 메인페이지 반응형 작업 시작
     #main_page {
-        overflow-x:hidden;
         .looking_for {
             .center {
                 .context_boxs {
