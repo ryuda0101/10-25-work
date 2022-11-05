@@ -1531,6 +1531,7 @@ button {
 
     // 메인페이지 반응형 작업 시작
     #main_page {
+        overflow-x:hidden;
         .looking_for {
             .center {
                 .context_boxs {

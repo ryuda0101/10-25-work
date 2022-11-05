@@ -1719,6 +1719,9 @@ button {
   #rooms .room .center .right .amenity .box {
     flex-direction: column;
   }
+  #main_page {
+    overflow-x: hidden;
+  }
   #main_page .looking_for .center .context_boxs .left_box {
     display: none;
   }
