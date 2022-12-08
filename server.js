@@ -24,7 +24,7 @@ const multer  = require('multer')
 const app = express();
 
 // 포트번호 변수로 세팅
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 // const port = 8080;
 
 
@@ -132,7 +132,6 @@ app.get("/edit/:no",function(req,res){
 })
 // 게시글 수정 후 db에 데이터 새로 업데이트
 app.post("/update",upload.single('file'),function(req,res){
-    
     if(req.file){
         fileUpload = req.file.originalname;
     }
@@ -150,8 +149,6 @@ app.post("/update",upload.single('file'),function(req,res){
     }},function(err,result){
         res.redirect("/detail/" + Number(req.body.hidden));
     });
-
-    
 });
 
 // 게시글 상세 페이지

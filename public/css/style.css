@@ -255,6 +255,7 @@ button {
 
 .main_banner {
   position: relative;
+  overflow-x: hidden;
 }
 .main_banner .center #banner_h2 {
   margin-bottom: 0;
@@ -473,6 +474,7 @@ button {
   border-radius: 30px;
   box-shadow: 0px 0px 10px #888;
   padding: 5px 10px;
+  font-size: 16px;
 }
 #login_page .center .left_box .loginForm .line > span {
   position: absolute;
@@ -527,11 +529,15 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
 }
 #login_page .center .right_box .text_box h3 {
   font-size: 35px;
   color: #fff;
   font-weight: 300;
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.5;
 }
 
 #Register_btns #loginBtn {
@@ -646,6 +652,8 @@ button {
   height: 500px;
   position: relative;
   white-space: pre-line;
+  padding: 0 75px;
+  line-height: 1.5;
 }
 #brd_detail .center .comment {
   margin-bottom: 30px;
@@ -852,14 +860,13 @@ button {
 #about_us .welcome .center .right_box img {
   position: absolute;
   width: 45%;
+  top: 0;
 }
 #about_us .welcome .center .right_box .img01 {
   left: 0;
-  bottom: 0;
 }
 #about_us .welcome .center .right_box .img02 {
   right: 0;
-  top: 0;
 }
 #about_us .services .center .boxs {
   display: flex;
